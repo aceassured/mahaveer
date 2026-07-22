@@ -1,0 +1,363 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+@font-face {
+  font-family: "Optima";
+  src: url("../fonts/OPTIMA.TTF") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Optima";
+  src: url("../fonts/OPTIMA_B.TTF") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Optima";
+  src: url("../fonts/Optima%20Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Optima";
+  src: url("../fonts/Optima_Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("../fonts/Satoshi-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Brittany";
+  src: url("../fonts/Brittney%20Signature.otf") format("opentype");
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: "Satoshi";
+}
+
+.font-optima {
+  font-family: "Optima", "Georgia", serif;
+}
+
+/* ==========================================================================
+   Scroll reveal
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+#site-header {
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease, transform 0.4s ease;
+}
+#site-header.header-solid {
+  background-color: rgba(20, 18, 16, 0.72);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+}
+#site-header.header-hidden {
+  transform: translateY(-100%);
+}
+#site-header .nav-link {
+  position: relative;
+}
+#site-header .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+#site-header .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile off-canvas menu */
+#mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#mobile-menu.is-open {
+  transform: translateX(0);
+}
+#mobile-menu-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+#mobile-menu-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+.btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+.btn-primary:hover {
+  background-color: #9c1c20;
+}
+.btn-secondary:hover {
+  background-color: #d9d0c4;
+}
+
+.icon-btn {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+}
+.icon-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* ==========================================================================
+   Hero swiper
+   ========================================================================== */
+.hero-swiper .swiper-slide img {
+  transform: scale(1);
+}
+.hero-swiper .swiper-slide-active img {
+  transform: scale(1.08);
+  transition: transform 6s ease;
+}
+.hero-dot {
+  width: 40px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: background 0.4s ease;
+}
+.hero-dot.swiper-pagination-bullet-active {
+  background: #ffffff;
+}
+/* Swiper forces its pagination containers to left:0;width:100% — override
+   back to the intended bottom-right placement set via Tailwind classes. */
+.hero-pagination.swiper-pagination-horizontal {
+  left: auto;
+  width: auto;
+  bottom: auto;
+}
+
+/* ==========================================================================
+   Cards: project / lifestyle image hover zoom
+   ========================================================================== */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-zoom:hover img {
+  transform: scale(1.08);
+}
+.overlay-fade {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.group:hover .overlay-fade {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Projects swiper pagination/nav */
+.projects-swiper .swiper-slide {
+  height: auto;
+}
+.swiper-nav-btn.swiper-button-disabled,
+.swiper-nav-btn.swiper-button-lock {
+  opacity: 0.35;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Stat count-up
+   ========================================================================== */
+.stat-icon {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible .stat-icon {
+  animation: float-in 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes float-in {
+  from {
+    transform: translateY(14px) scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   Testimonial play button pulse
+   ========================================================================== */
+.play-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  animation: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   Decorative dot grid (used near hero/stats seam)
+   ========================================================================== */
+.dot-grid {
+  background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+  background-size: 37px 37px;
+}
+
+/* Back to top rotate */
+#back-to-top svg {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#back-to-top:hover svg {
+  transform: rotate(360deg);
+}
+
+/* Testimonial swiper */
+.testimonial-swiper .swiper-slide {
+  height: auto;
+}
+
+
+.hero-gradient {
+  background-image:
+    linear-gradient(
+      174.7225deg,
+      rgba(0, 0, 0, 0.84) 11.623%,
+      rgba(0, 0, 0, 0) 31.869%
+    ),
+    linear-gradient(
+      78.5837deg,
+      rgba(0, 0, 0, 0.84) 20.897%,
+      rgba(0, 0, 0, 0) var(--left-gradient-end)
+    );
+}

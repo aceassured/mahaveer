@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Mahaveer Group</title>
+  <meta name="description" content="With over 27 years of excellence, Mahaveer Group has been shaping the future of urban living across South India through thoughtfully designed communities built on quality, trust, and innovation." />
+  <link rel="icon" href="assets/images/logo-mark.png" type="image/png" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          screens: {
+            xs: '320px',
+            xxs: '375px',
+            ssm: '550px',
+            sm: '640px',
+            md: '768px',
+            lg: '1024px',
+            lgg: '1060px',
+            llg: '1200px',
+            xl: '1280px',
+            xll: '1440px',
+            '2xl': '1536px',
+            '2xxl': '1600px',
+            '2xll': '1700px',
+            '3xl': '1920px',
+          },
+          colors: {
+            brand: { DEFAULT: '#B62126', dark: '#9C1C20' },
+            cream: { DEFAULT: '#E5DFD8', section: '#EAE4DD', deep: '#D9D0C4' },
+            charcoal: { DEFAULT: '#282828', dark: '#191919' },
+            gold: { DEFAULT: '#D2AA68' },
+          },
+          fontFamily: {
+            optima: ['Optima', 'Georgia', 'serif'],
+            satoshi: ['Satoshi', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="bg-white text-charcoal font-satoshi antialiased overflow-x-hidden">
+
+  <!-- ============================== HEADER ============================== -->
+  <header id="site-header" class="fixed font-satoshi top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px] flex items-center justify-between h-[78px] lg:h-[107px]">
+      <a href="home.html" class="shrink-0">
+        <img src="assets/images/logo-header.png" alt="Mahaveer - Finest Homes &amp; Honest Practices" class="h-7 sm:h-9 lg:h-10 w-auto select-none" />
+      </a>
+
+      <nav class="hidden llg:flex items-center gap-5 xl:gap-8 2xl:gap-10 text-white font-satoshi font-medium text-sm xl:text-base">
+        <a href="about.html" class="nav-link font-satoshi text-brand">About Us</a>
+        <a href="home.html#projects" class="nav-link font-satoshi">Projects</a>
+        <a href="#" class="nav-link font-satoshi">Villas</a>
+        <a href="#" class="nav-link font-satoshi">Sustainability</a>
+        <a href="#" class="nav-link font-satoshi">Blog</a>
+        <a href="#" class="nav-link font-satoshi">Contact Us</a>
+      </nav>
+
+      <div class="flex items-center gap-3 sm:gap-[18px]">
+        <a href="home.html#book-a-visit" class="btn btn-secondary font-satoshi hidden sm:inline-flex items-center justify-center bg-cream text-charcoal text-sm lg:text-base font-medium px-5 py-2.5 rounded-[11px]">
+          Book a Site Visit
+        </a>
+        <button id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" class="icon-btn flex items-center justify-center w-[42px] h-[42px] rounded-full bg-brand">
+          <img src="assets/icons/icon-hamburger.svg" class="w-6 h-6" alt="" />
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================== MOBILE MENU ============================== -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/60 z-[60]"></div>
+  <aside id="mobile-menu" class="fixed top-0 right-0 z-[70] h-full w-[86%] max-w-sm bg-charcoal-dark text-white flex flex-col">
+    <div class="flex items-center justify-between px-6 h-[78px] border-b border-white/10 shrink-0">
+      <img src="assets/images/logo-header.png" class="h-7 w-auto" alt="Mahaveer" />
+      <button id="menu-close" type="button" aria-label="Close menu" class="icon-btn w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+        <img src="assets/icons/icon-close.svg" class="w-4 h-4 invert" alt="" />
+      </button>
+    </div>
+    <nav class="flex flex-col gap-1 px-6 py-8 text-xl font-satoshi overflow-y-auto">
+      <a href="about.html" class="font-satoshi py-3.5 border-b border-white/10 text-brand">About Us</a>
+      <a href="home.html#projects" class="mobile-nav-link font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">Projects</a>
+      <a href="#" class="mobile-nav-link font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">Villas</a>
+      <a href="#" class="mobile-nav-link font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">Sustainability</a>
+      <a href="#" class="mobile-nav-link font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">Blog</a>
+      <a href="#" class="mobile-nav-link font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">Contact Us</a>
+    </nav>
+    <div class="mt-auto px-6 pb-10 pt-4 shrink-0">
+      <a href="home.html#book-a-visit" class="mobile-nav-link btn btn-primary font-satoshi block text-center bg-brand text-white py-3.5 rounded-[11px] font-medium">Book a Site Visit</a>
+    </div>
+  </aside>
+
+  <!-- ============================== HERO BANNER ============================== -->
+  <section id="hero" class="relative w-full aspect-[1920/611] min-h-[380px] sm:min-h-[450px] llg:min-h-0 overflow-hidden bg-charcoal-dark">
+    <img src="assets/images/about-hero-banner.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Mahaveer residential community aerial view" />
+    <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent lg:hidden"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20 lg:hidden"></div>
+
+    <div class="absolute inset-0 z-10 flex items-end pb-10 sm:pb-12 md:pb-14 lg:pb-[60px] xl:pb-[80px]">
+      <div class="mx-auto w-full max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px]">
+        <div class="max-w-[673px]">
+          <h1 class="reveal font-optima text-white leading-[1.2] sm:leading-[1.25] lg:leading-[1.3] text-[30px] sm:text-[40px] llg:text-[50px] 3xl:text-[68px]">
+            Building Communities. Inspiring Generations.
+          </h1>
+          <p class="reveal font-satoshi mt-4 sm:mt-5 text-white/85 text-base llg:text-lg max-w-[532px]" style="--reveal-delay:150ms">
+            For over 25 years, Mahaveer has been creating thoughtfully planned communities that combine quality craftsmanship, timeless design, and exceptional living experiences.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== ABOUT MAHAVEER GROUP ============================== -->
+  <section id="about" class="relative bg-cream-section py-16 sm:py-20 lg:py-[100px] overflow-hidden">
+    <img src="assets/images/stats-bg-texture.jpg" alt="" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity pointer-events-none" />
+    <div class="dot-grid absolute -right-6 top-10 w-52 h-52 text-cream-deep hidden lg:block pointer-events-none"></div>
+
+    <div class="relative mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px]">
+      <div class="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16 max-w-[1466px] mx-auto">
+        <div class="reveal rounded-2xl overflow-hidden w-full lg:w-[500px] xl:w-[705px] shrink-0 aspect-[705/714]">
+          <img src="assets/images/about-mahaveer-group.jpg" loading="lazy" class="w-full h-full object-cover" alt="Mahaveer Group headquarters" />
+        </div>
+        <div class="reveal flex flex-col gap-8" style="--reveal-delay:120ms">
+          <h2 class="font-optima text-[#282828] text-[30px] sm:text-[40px] lgg:text-[50px] 3xl:text-[68px] leading-[1.3]">About Mahaveer Group</h2>
+          <div class="font-satoshi flex flex-col gap-6 text-[#282828]/70 text-base sm:text-lg lg:text-base lgg:text-lg leading-relaxed">
+            <p>With over 27 years of excellence, Mahaveer Group has been shaping the future of urban living across South India through thoughtfully designed communities built on quality, trust, and innovation. Headquartered in Bengaluru with a strong presence in Bengaluru and Hyderabad, we have delivered 125+ residential and commercial developments, spanning over 26 million sq. ft. of meticulously planned spaces.</p>
+            <p>Today, 20,000+ families proudly call a Mahaveer home their own—a reflection of the trust we've earned through customer-centric design, uncompromising construction quality, and timely delivery. Our diverse portfolio includes premium apartments, luxury villas, plotted developments, integrated townships, and commercial spaces, thoughtfully crafted to meet the evolving needs of modern lifestyles.</p>
+            <p>As an ISO 9001:2015 certified company, Mahaveer Group upholds the highest standards of quality, sustainability, and ethical business practices. Guided by experienced leadership and driven by innovation, we continue to create future-ready communities that enrich lives, inspire confidence, and deliver lasting value for generations.</p>
+          </div>
+          <a href="#journey" class="btn btn-primary font-satoshi inline-flex items-center justify-center self-start bg-brand text-white text-base sm:text-lg lg:text-base lgg:text-lg font-medium px-6 sm:px-[26px] py-3.5 rounded-[11px]">Discover Our Journey</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== STATS STRIP ============================== -->
+  <section class="relative bg-[#101010] py-10 sm:py-12 lg:py-[42px]">
+    <div class="mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px]">
+      <div class="flex flex-wrap justify-center lg:justify-between gap-x-8 sm:gap-x-10 gap-y-8">
+        <div class="reveal flex flex-col items-start border-l border-brand pl-[18px] sm:pl-[24px] lgg:pl-[30px]">
+          <p class="font-optima text-white text-[30px] sm:text-[40px] lgg:text-[50px] 3xl:text-[68px] leading-[1.4]" data-count-to="125" data-suffix="+">0+</p>
+          <p class="font-satoshi text-white text-sm lgg:text-base 3xl:text-lg">Exceptional Projects</p>
+        </div>
+        <div class="reveal flex flex-col items-start border-l border-brand pl-[18px] sm:pl-[24px] lgg:pl-[30px]" style="--reveal-delay:80ms">
+          <p class="font-optima text-white text-[30px] sm:text-[40px] lgg:text-[50px] 3xl:text-[68px] leading-[1.4]" data-count-to="26" data-suffix="M">0M</p>
+          <p class="font-satoshi text-white text-sm lgg:text-base 3xl:text-lg">Sq. Ft. of Development</p>
+        </div>
+        <div class="reveal flex flex-col items-start border-l border-brand pl-[18px] sm:pl-[24px] lgg:pl-[30px]" style="--reveal-delay:160ms">
+          <p class="font-optima text-white text-[30px] sm:text-[40px] lgg:text-[50px] 3xl:text-[68px] leading-[1.4]" data-count-to="20" data-suffix="K+">0K+</p>
+          <p class="font-satoshi text-white text-sm lgg:text-base 3xl:text-lg">Happy Homeowners</p>
+        </div>
+        <div class="reveal flex flex-col items-start border-l border-brand pl-[18px] sm:pl-[24px] lgg:pl-[30px]" style="--reveal-delay:240ms">
+          <p class="font-optima text-white text-[30px] sm:text-[40px] lgg:text-[50px] 3xl:text-[68px] leading-[1.4]" data-count-to="15" data-suffix="+">0+</p>
+          <p class="font-satoshi text-white text-sm lgg:text-base 3xl:text-lg">Prime Locations Across Bengaluru</p>
+        </div>
+        <div class="reveal flex flex-col items-start border-l border-brand pl-[18px] sm:pl-[24px] lgg:pl-[30px]" style="--reveal-delay:320ms">
+          <p class="font-optima text-white text-[30px] sm:text-[40px] lgg:text-[50px] 3xl:text-[68px] leading-[1.4]" data-count-to="27" data-suffix="+">0+</p>
+          <p class="font-satoshi text-white text-sm lgg:text-base 3xl:text-lg">Years of Trusted Excellence</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== WHAT DEFINES MAHAVEER ============================== -->
+  <section class="relative bg-black py-16 sm:py-20 lg:py-[100px] overflow-hidden">
+    <div class="mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px]">
+      <div class="reveal text-center max-w-[708px] mx-auto">
+        <h2 class="font-optima text-white text-[30px] sm:text-[40px] lg:text-[50px] 3xl:text-[68px] leading-[1.3]">What Defines Mahaveer</h2>
+        <p class="font-satoshi mt-3 text-white/70 text-base lg:text-base 3xl:text-lg">From vibrant urban residences to serene villa neighbourhoods, each Mahaveer community is designed around the people who call it home.</p>
+      </div>
+
+      <div class="mt-12 sm:mt-14 lg:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-[1720px] mx-auto">
+        <div class="reveal flex flex-col items-center gap-6 lg:gap-[34px]">
+          <div class="rounded-2xl overflow-hidden aspect-[520/476] w-full">
+            <img src="assets/images/defines-quality.jpg" loading="lazy" class="w-full h-full object-cover" alt="Quality construction detail" />
+          </div>
+          <div class="text-center">
+            <h3 class="font-optima text-white text-xl lg:text-2xl 3xl:text-[28px]">Quality Construction</h3>
+            <p class="font-satoshi text-white/60 text-sm sm:text-base mt-2">Built with uncompromising craftsmanship and lasting quality.</p>
+          </div>
+        </div>
+        <div class="reveal flex flex-col items-center gap-6 lg:gap-[34px]" style="--reveal-delay:120ms">
+          <div class="rounded-2xl overflow-hidden aspect-[520/476] w-full">
+            <img src="assets/images/defines-innovative.jpg" loading="lazy" class="w-full h-full object-cover" alt="Innovative architectural design" />
+          </div>
+          <div class="text-center">
+            <h3 class="font-optima text-white text-xl lg:text-2xl 3xl:text-[28px]">Innovative Design</h3>
+            <p class="font-satoshi text-white/60 text-sm sm:text-base mt-2">Thoughtfully planned spaces that enhance everyday living.</p>
+          </div>
+        </div>
+        <div class="reveal flex flex-col items-center gap-6 lg:gap-[34px] sm:col-span-2 lg:col-span-1" style="--reveal-delay:240ms">
+          <div class="rounded-2xl overflow-hidden aspect-[520/476] w-full">
+            <img src="assets/images/defines-transparent.jpg" loading="lazy" class="w-full h-full object-cover" alt="Team discussing project plans" />
+          </div>
+          <div class="text-center">
+            <h3 class="font-optima text-white text-xl lg:text-2xl 3xl:text-[28px]">Transparent Approach</h3>
+            <p class="font-satoshi text-white/60 text-sm sm:text-base mt-2">Honest communication and a customer-first philosophy throughout every journey.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== DESIGNED AROUND THE WAY YOU LIVE (BENTO) ============================== -->
+  <section class="relative bg-cream-section py-16 sm:py-20 lg:py-[100px] border-t border-cream-deep/60">
+    <div class="mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px]">
+      <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-8 lg:gap-10">
+        <h2 class="reveal font-optima text-charcoal text-[30px] sm:text-[40px] lg:text-[50px] 3xl:text-[68px] leading-[1.3] lg:max-w-[520px]">Designed Around The Way You Live</h2>
+        <div class="reveal lg:max-w-[470px]" style="--reveal-delay:120ms">
+          <p class="font-satoshi text-charcoal text-base sm:text-lg lg:text-base 3xl:text-lg leading-relaxed">Every Mahaveer community is thoughtfully designed to enrich everyday living with world-class amenities, serene green spaces, and experiences that bring comfort, wellness, and connection to every moment.</p>
+          <a href="#" class="btn btn-primary font-satoshi inline-flex items-center justify-center bg-brand text-white text-base sm:text-lg lg:text-base 3xl:text-lg font-medium px-6 sm:px-[26px] py-3.5 rounded-[11px] mt-6">Experience Mahaveer Living</a>
+        </div>
+      </div>
+
+      <div class="reveal mt-12 sm:mt-14 lg:mt-[60px] grid grid-cols-1 lg:grid-cols-[250px_1fr_250px] lgg:grid-cols-[339px_1fr_366px] gap-6 lgg:gap-8" style="--reveal-delay:200ms">
+        <div class="flex flex-col gap-3 sm:gap-4 lg:self-center">
+          <span class="font-satoshi inline-flex items-center gap-2.5 text-charcoal text-base sm:text-xl"><span class="w-[9px] h-[9px] sm:w-[11px] sm:h-[11px] rounded-full bg-brand shrink-0"></span>Badminton Court</span>
+          <div class="rounded-2xl overflow-hidden min-h-[220px] lg:h-[292px]">
+            <img src="assets/images/bento-badminton.jpg" loading="lazy" class="w-full h-full object-cover" alt="Badminton court" />
+          </div>
+        </div>
+        <div class="flex flex-col gap-3 sm:gap-4 lg:order-none">
+          <div class="rounded-2xl overflow-hidden flex-1 min-h-[260px] lg:min-h-[533px]">
+            <img src="assets/images/bento-lounge.jpg" loading="lazy" class="w-full h-full object-cover" alt="Residents lounge interior" />
+          </div>
+          <span class="font-satoshi inline-flex items-center gap-2.5 text-charcoal text-base sm:text-xl"><span class="w-[9px] h-[9px] sm:w-[11px] sm:h-[11px] rounded-full bg-brand shrink-0"></span>Residents&rsquo; Lounge</span>
+        </div>
+        <div class="flex flex-col gap-3 sm:gap-4 lg:self-center">
+          <span class="font-satoshi inline-flex items-center gap-2.5 text-charcoal text-base sm:text-xl"><span class="w-[9px] h-[9px] sm:w-[11px] sm:h-[11px] rounded-full bg-brand shrink-0"></span>Swimming Pool</span>
+          <div class="rounded-2xl overflow-hidden min-h-[220px] lg:h-[378px]">
+            <img src="assets/images/bento-pool.jpg" loading="lazy" class="w-full h-full object-cover" alt="Swimming pool" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== VISION & MISSION ============================== -->
+  <section class="relative bg-black py-16 sm:py-20 lg:py-[100px]">
+    <div class="mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px]">
+      <div class="reveal text-center max-w-[1037px] mx-auto">
+        <h2 class="font-optima text-white text-[30px] sm:text-[40px] lg:text-[50px] 3xl:text-[68px] leading-[1.3]">Driven by Purpose. Guided by Vision.</h2>
+        <p class="font-satoshi mt-3 text-white/70 text-base lg:text-base 3xl:text-lg max-w-[828px] mx-auto">Every Mahaveer development is shaped by a clear vision and a steadfast mission—to create thoughtfully designed communities that inspire trust, enrich lives, and deliver lasting value for generations.</p>
+      </div>
+
+      <div class="mt-12 sm:mt-14 lg:mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-[165px] max-w-[1575px] mx-auto">
+        <div class="reveal">
+          <h3 class="font-satoshi text-white text-2xl sm:text-3xl mb-6">Vision</h3>
+          <p class="font-satoshi font-light text-white/60 text-lg sm:text-xl lg:text-lg lgg:text-xl 3xl:text-2xl leading-[1.6]">To redefine urban living by creating thoughtfully designed, premium yet affordable homes that enhance everyday lifestyles, foster a sense of belonging, and build strong, connected communities. Guided by sustainable practices and long-term thinking, the vision is to contribute meaningfully to economic growth while ensuring responsible development for future generations.</p>
+        </div>
+        <div class="reveal" style="--reveal-delay:120ms">
+          <h3 class="font-satoshi text-white text-2xl sm:text-3xl mb-6">Mission</h3>
+          <p class="font-satoshi font-light text-white/60 text-lg sm:text-xl lg:text-lg lgg:text-xl 3xl:text-2xl leading-[1.6]">To craft exceptional homes with unwavering integrity, professional expertise, and cutting-edge technologies, delivering not just structures but thoughtfully designed living spaces that enhance lifestyles, foster community, and create lasting value. Through every project, we strive to set new benchmarks in quality, innovation, and sustainability, ensuring our customers experience trust, comfort, and pride in their homes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== OUR JOURNEY ============================== -->
+  <section id="journey" class="relative bg-[#111] py-16 sm:py-20 lg:py-[100px]">
+    <div class="mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px]">
+      <div class="flex flex-col lgg:flex-row lg:items-stretch gap-10 lg:gap-16 max-w-[1720px] mx-auto">
+        <div class="reveal flex flex-col justify-between gap-10 lg:w-[400px] shrink-0">
+          <div>
+            <h2 class="font-optima text-white text-[30px] sm:text-[40px] lg:text-[50px] 3xl:text-[68px] leading-[1.3]">Our Journey</h2>
+            <p class="font-satoshi mt-3 text-white/70 text-base lg:text-base 3xl:text-lg max-w-[434px]">Our commitment to quality, innovation, and customer satisfaction has been recognised by leading industry institutions.</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <button class="journey-prev swiper-nav-btn icon-btn w-12 h-12 sm:w-[52px] sm:h-[52px] rounded-[11px] bg-[#252525] flex items-center justify-center">
+              <img src="assets/icons/icon-arrow-up-right.svg" class="w-5 h-5 rotate-[225deg]" alt="Previous milestone" />
+            </button>
+            <button class="journey-next swiper-nav-btn icon-btn w-12 h-12 sm:w-[52px] sm:h-[52px] rounded-[11px] bg-brand flex items-center justify-center">
+              <img src="assets/icons/icon-arrow-up-right.svg" class="w-5 h-5 rotate-45" alt="Next milestone" />
+            </button>
+          </div>
+        </div>
+
+        <div class="reveal flex-1 min-w-0" style="--reveal-delay:150ms">
+          <div class="swiper journey-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide h-auto">
+                <div class="bg-[#252525] rounded-2xl h-full px-6 py-8 lg:px-6 lg:py-10 flex flex-col gap-3">
+                  <p class="font-satoshi text-white text-3xl sm:text-4xl lg:text-2xl">1998&ndash;1999</p>
+                  <p class="font-satoshi text-white text-lg sm:text-xl lg:text-lg">Founding &amp; Early Vision</p>
+                  <p class="font-satoshi text-white/60 text-sm sm:text-base lg:text-sm leading-relaxed mt-2">Mahaveer Group was founded under the leadership of Praveen Reddy Kumbala during Bengaluru's IT boom, with a clear vision to create affordable, high-quality homes, supported by a strong commitment to thoughtful project planning.</p>
+                </div>
+              </div>
+              <div class="swiper-slide h-auto">
+                <div class="bg-[#252525] rounded-2xl h-full px-6 py-8 lg:px-6 lg:py-10 flex flex-col gap-3">
+                  <p class="font-satoshi text-white text-3xl sm:text-4xl lg:text-2xl">2000&ndash;2001</p>
+                  <p class="font-satoshi text-white text-lg sm:text-xl lg:text-lg">Diversification &amp; Growth</p>
+                  <p class="font-satoshi text-white/60 text-sm sm:text-base lg:text-sm leading-relaxed mt-2">The Group expanded into apartments and plotted developments, leveraging engineering expertise from Reddy Structures to ensure durable, high-standard construction.</p>
+                </div>
+              </div>
+              <div class="swiper-slide h-auto">
+                <div class="bg-[#252525] rounded-2xl h-full px-6 py-8 lg:px-6 lg:py-10 flex flex-col gap-3">
+                  <p class="font-satoshi text-white text-3xl sm:text-4xl lg:text-2xl">2002&ndash;2003</p>
+                  <p class="font-satoshi text-white text-lg sm:text-xl lg:text-lg">Land Bank Acquisition &amp; Incorporation</p>
+                  <p class="font-satoshi text-white/60 text-sm sm:text-base lg:text-sm leading-relaxed mt-2">Mahaveer acquired 100+ acres of land, with initial delivery by 2004. Formal incorporation enabled structured operations, regulatory compliance, and scalable growth.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FOUNDER ============================== -->
+  <section class="relative bg-cream-section py-16 sm:py-20 lg:py-[100px] overflow-hidden">
+    <img src="assets/images/stats-bg-texture.jpg" alt="" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity pointer-events-none" />
+    <div class="relative mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px]">
+      <div class="flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16 max-w-[1430px] mx-auto">
+        <div class="reveal  rounded-2xl overflow-hidden w-full lg:w-[500px] xl:w-[705px] shrink-0 aspect-[705/714]">
+          <img src="assets/images/founder-photo.jpg" loading="lazy" class="w-full h-full object-cover" alt="Praveen Reddy Kumbala, Founder and Chairman of Mahaveer Group" />
+        </div>
+        <div class="reveal flex flex-col gap-6 flex-1 lg:justify-center" style="--reveal-delay:120ms">
+          <h2 class="font-optima text-charcoal text-[30px] sm:text-[40px] lgg:text-[50px] 3xl:text-[68px] leading-[1.3]">A Vision That Continues to Inspire</h2>
+          <div class="font-satoshi flex flex-col gap-5 text-charcoal/80 text-base sm:text-lg lg:text-base lgg:text-lg leading-relaxed">
+            <p>Raveen Reddy Kumbala, Founder and Chairman of Mahaveer Group, established the company in 1997-98 with a vision to redefine urban living through quality construction, transparent practices, and customer-first values. A qualified civil engineer, he has led Mahaveer Group to become one of South India's most trusted real estate developers.</p>
+            <p>Under his leadership, the company has built a strong reputation for innovation, integrity, and sustainable development while maintaining the highest standards of quality and governance. His commitment to creating thoughtfully designed communities continues to shape Mahaveer's legacy of trust, excellence, and lasting value.</p>
+          </div>
+          <div class="flex items-end justify-between gap-6 mt-2 pt-6 border-t border-charcoal/10">
+            <div>
+              <p class="font-optima text-charcoal text-lg sm:text-xl">Mr. Praveen Reddy Kumbala</p>
+              <p class="font-satoshi text-charcoal/60 text-sm sm:text-base mt-1">Founder &amp; Chairman</p>
+            </div>
+            <div class="flex items-center gap-3 sm:gap-4 shrink-0">
+              <button class="icon-btn w-11 h-11 sm:w-[52px] sm:h-[52px] rounded-[11px] bg-white flex items-center justify-center" aria-label="Previous">
+                <img src="assets/icons/icon-arrow-up-right.svg" class="w-5 h-5 rotate-[225deg] invert" alt="" />
+              </button>
+              <button class="icon-btn w-11 h-11 sm:w-[52px] sm:h-[52px] rounded-[11px] bg-brand flex items-center justify-center" aria-label="Next">
+                <img src="assets/icons/icon-arrow-up-right.svg" class="w-5 h-5 rotate-45" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== RECOGNISED FOR EXCELLENCE (AWARDS SWIPER) ============================== -->
+  <section class="relative bg-black py-16 sm:py-20 lg:py-[100px]">
+    <div class="mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px]">
+      <div class="reveal text-center max-w-[780px] mx-auto">
+        <h2 class="font-optima text-white text-[30px] sm:text-[40px] lg:text-[50px] 3xl:text-[68px] leading-[1.3]">Recognised For Excellence</h2>
+        <p class="font-satoshi mt-3 text-white/70 text-base lg:text-base 3xl:text-lg">Our commitment to quality, innovation, and customer satisfaction has been recognised by leading industry institutions.</p>
+      </div>
+    </div>
+
+    <div class="reveal mt-12 sm:mt-14 lg:mt-16 w-full" style="--reveal-delay:150ms">
+      <div class="swiper awards-swiper">
+          <div class="swiper-wrapper ">
+            <div class="swiper-slide h-auto">
+              <div class="bg-[#111] rounded-2xl h-full flex flex-col justify-between px-7 py-10 sm:px-9 sm:py-12">
+                <img src="assets/icons/icon-award-medal.png" class="w-16 h-16 sm:w-[86px] sm:h-[84px]" alt="" />
+                <div class="font-satoshi flex flex-col gap-3 text-white mt-8">
+                  <p class="text-sm sm:text-base">ET Realty Awards &bull; 2020</p>
+                  <p class="font-satoshi text-xl lg:text-2xl 3xl:text-[28px]">Life time Project of the Year</p>
+                  <p class="text-white/60 text-sm sm:text-base">Recognised for delivering thoughtfully planned residential communities that set new benchmarks in quality and customer satisfaction.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide h-auto">
+              <div class="bg-[#111] rounded-2xl h-full flex flex-col justify-between px-7 py-10 sm:px-9 sm:py-12">
+                <img src="assets/icons/icon-award-medal.png" class="w-16 h-16 sm:w-[86px] sm:h-[84px]" alt="" />
+                <div class="font-satoshi flex flex-col gap-3 text-white mt-8">
+                  <p class="text-sm sm:text-base">Tech Innovations Summit &bull; 2018</p>
+                  <p class="font-satoshi text-xl lg:text-2xl 3xl:text-[28px]">Times Business Awards</p>
+                  <p class="text-white/60 text-sm sm:text-base">Honored for revolutionary technology solutions that enhance everyday life and drive industry standards.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide h-auto">
+              <div class="bg-[#111] rounded-2xl h-full flex flex-col justify-between px-7 py-10 sm:px-9 sm:py-12">
+                <img src="assets/icons/icon-award-medal.png" class="w-16 h-16 sm:w-[86px] sm:h-[84px]" alt="" />
+                <div class="font-satoshi flex flex-col gap-3 text-white mt-8">
+                  <p class="text-sm sm:text-base">Green Energy Conference &bull; 2021</p>
+                  <p class="font-satoshi text-xl lg:text-2xl 3xl:text-[28px]">Common Floor Awards</p>
+                  <p class="text-white/60 text-sm sm:text-base">Acknowledged for pioneering renewable energy projects that significantly reduce carbon footprint.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide h-auto">
+              <div class="bg-[#111] rounded-2xl h-full flex flex-col justify-between px-7 py-10 sm:px-9 sm:py-12">
+                <img src="assets/icons/icon-award-medal.png" class="w-16 h-16 sm:w-[86px] sm:h-[84px]" alt="" />
+                <div class="font-satoshi flex flex-col gap-3 text-white mt-8">
+                  <p class="text-sm sm:text-base">Design Excellence Awards &bull; 2024</p>
+                  <p class="font-satoshi text-xl lg:text-2xl 3xl:text-[28px]">Reality India Awards</p>
+                  <p class="text-white/60 text-sm sm:text-base">Celebrated for a unique approach to product aesthetics that harmonizes functionality with visual appeal.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide h-auto">
+              <div class="bg-[#111] rounded-2xl h-full flex flex-col justify-between px-7 py-10 sm:px-9 sm:py-12">
+                <img src="assets/icons/icon-award-medal.png" class="w-16 h-16 sm:w-[86px] sm:h-[84px]" alt="" />
+                <div class="font-satoshi flex flex-col gap-3 text-white mt-8">
+                  <p class="text-sm sm:text-base">ET Realty Awards &bull; 2020</p>
+                  <p class="font-satoshi text-xl lg:text-2xl 3xl:text-[28px]">Life time Project of the Year</p>
+                  <p class="text-white/60 text-sm sm:text-base">Recognised for delivering thoughtfully planned residential communities that set new benchmarks in quality and customer satisfaction.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide h-auto">
+              <div class="bg-[#111] rounded-2xl h-full flex flex-col justify-between px-7 py-10 sm:px-9 sm:py-12">
+                <img src="assets/icons/icon-award-medal.png" class="w-16 h-16 sm:w-[86px] sm:h-[84px]" alt="" />
+                <div class="font-satoshi flex flex-col gap-3 text-white mt-8">
+                  <p class="text-sm sm:text-base">Tech Innovations Summit &bull; 2018</p>
+                  <p class="font-satoshi text-xl lg:text-2xl 3xl:text-[28px]">Times Business Awards</p>
+                  <p class="text-white/60 text-sm sm:text-base">Honored for revolutionary technology solutions that enhance everyday life and drive industry standards.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px]">
+      <div class="flex items-center justify-center gap-4 mt-8 sm:mt-10">
+        <button class="awards-prev swiper-nav-btn icon-btn w-11 h-11 sm:w-12 sm:h-12 rounded-[11px] bg-white/10 flex items-center justify-center">
+          <img src="assets/icons/icon-arrow-up-right.svg" class="w-5 h-5 rotate-[225deg]" alt="Previous award" />
+        </button>
+        <button class="awards-next swiper-nav-btn icon-btn w-11 h-11 sm:w-12 sm:h-12 rounded-[11px] bg-brand flex items-center justify-center">
+          <img src="assets/icons/icon-arrow-up-right.svg" class="w-5 h-5 rotate-45" alt="Next award" />
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== STORIES FROM OUR HOMEOWNERS ============================== -->
+  <section class="relative bg-white border-b border-cream-section py-16 sm:py-20 lg:py-[100px]">
+    <div class="mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px]">
+      <h2 class="reveal font-optima text-charcoal text-center text-[30px] sm:text-[40px] lg:text-[50px] 3xl:text-[68px] leading-[1.3]">Stories From<br />Our Homeowners</h2>
+
+      <div class="mt-12 sm:mt-14 lg:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-[46px] max-w-[1720px] mx-auto">
+        <div class="reveal relative rounded-2xl overflow-hidden h-[480px] sm:h-[540px] lg:h-[572px]">
+          <img src="assets/images/testimonial-rohan-ananya.jpg" loading="lazy" class="absolute inset-0 w-full h-full object-cover" alt="Rohan and Ananya, homeowners at Mahaveer Hillstone" />
+          <div class="absolute inset-0" style="background-image:linear-gradient(184deg, rgba(233,227,221,0) 48%, rgba(233,227,221,0.84) 71%, rgb(233,227,221) 97%)"></div>
+          <div class="font-satoshi absolute inset-x-0 bottom-0 p-7 sm:p-9 flex flex-col gap-5 text-charcoal">
+            <div>
+              <p class="font-medium text-xl lg:text-2xl 3xl:text-[28px]">Rohan &amp; Ananya</p>
+              <p class="text-base sm:text-lg">Mahaveer Hillstone</p>
+            </div>
+            <p class="opacity-60 text-sm sm:text-base leading-relaxed">From the moment we stepped into our Mahaveer home, we knew it was the right choice. The thoughtful planning, quality finishes, and peaceful surroundings exceeded our expectations.</p>
+          </div>
+        </div>
+        <div class="reveal relative rounded-2xl overflow-hidden h-[480px] sm:h-[540px] lg:h-[572px]" style="--reveal-delay:120ms">
+          <img src="assets/images/testimonial-vikram.jpg" loading="lazy" class="absolute inset-0 w-full h-full object-cover" alt="Vikram Rao, homeowner at Mahaveer Hillstone" />
+          <div class="absolute inset-0" style="background-image:linear-gradient(184deg, rgba(233,227,221,0) 48%, rgba(233,227,221,0.84) 71%, rgb(233,227,221) 97%)"></div>
+          <div class="font-satoshi absolute inset-x-0 bottom-0 p-7 sm:p-9 flex flex-col gap-5 text-charcoal">
+            <div>
+              <p class="font-medium text-xl lg:text-2xl 3xl:text-[28px]">Vikram Rao</p>
+              <p class="text-base sm:text-lg">Mahaveer Hillstone</p>
+            </div>
+            <p class="opacity-60 text-sm sm:text-base leading-relaxed">What impressed me most was Mahaveer's transparency throughout the buying journey. Every commitment was delivered on time, making the entire experience smooth and stress-free.</p>
+          </div>
+        </div>
+        <div class="reveal relative rounded-2xl overflow-hidden h-[480px] sm:h-[540px] lg:h-[572px]" style="--reveal-delay:240ms">
+          <img src="assets/images/testimonial-priya-karthik.jpg" loading="lazy" class="absolute inset-0 w-full h-full object-cover" alt="Priya and Karthik, homeowners at Mahaveer Hillstone" />
+          <div class="absolute inset-0" style="background-image:linear-gradient(184deg, rgba(233,227,221,0) 48%, rgba(233,227,221,0.84) 71%, rgb(233,227,221) 97%)"></div>
+          <div class="font-satoshi absolute inset-x-0 bottom-0 p-7 sm:p-9 flex flex-col gap-5 text-charcoal">
+            <div>
+              <p class="font-medium text-xl lg:text-2xl 3xl:text-[28px]">Priya &amp; Karthik</p>
+              <p class="text-base sm:text-lg">Mahaveer Hillstone</p>
+            </div>
+            <p class="opacity-60 text-sm sm:text-base leading-relaxed">Our children love the open spaces, clubhouse, and vibrant community. Mahaveer has given us more than a home—it has given us a lifestyle we'll cherish for years to come.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== CTA + FOOTER ============================== -->
+  <section id="book-a-visit" class="relative bg-white">
+    <div class="relative overflow-hidden border-b border-cream-deep/60">
+      <img src="assets/images/cta-banner-bg.jpg" class="absolute inset-0 w-full h-full object-cover" alt="" />
+      <div class="reveal relative mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px] py-14 sm:py-16 lg:py-[93px]">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12">
+          <div class="max-w-[717px]">
+            <h2 class="font-optima text-charcoal-dark text-[28px] sm:text-[36px] md:text-[40px] lg:text-[50px] 3xl:text-[68px] leading-[1.3]">Find a Place You&rsquo;ll Love Coming Home To.</h2>
+            <p class="font-satoshi mt-3 text-charcoal text-base 3xl:text-lg max-w-[376px]">Explore thoughtfully designed communities created for modern living, lasting value, and a lifetime of memories.</p>
+          </div>
+          <div class="flex flex-wrap gap-4 sm:gap-5 shrink-0">
+            <a href="home.html#book-a-visit" class="btn btn-primary font-satoshi bg-brand text-white text-base 3xl:text-lg font-medium px-6 sm:px-[26px] py-3.5 rounded-[11px]">Book a Site Visit</a>
+            <a href="home.html#projects" class="btn btn-secondary font-satoshi backdrop-blur-sm bg-cream text-charcoal-dark text-base 3xl:text-lg font-medium px-6 sm:px-[26px] py-3.5 rounded-[11px]">Explore Projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="relative bg-white pt-14 sm:pt-16 lg:pt-24 pb-8 sm:pb-10">
+      <div class="mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px]">
+        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,min(620px,38%))_1fr] gap-12 lg:gap-[60px] xll:gap-[80px] 2xl:gap-[100px]">
+
+          <div class="flex flex-col justify-between gap-10">
+            <div class="flex flex-col gap-7 sm:gap-9">
+              <img src="assets/images/logo-mark.png" loading="lazy" class="w-14 sm:w-16 lg:w-20 h-auto" alt="Mahaveer" />
+              <div class="font-satoshi text-charcoal-dark font-medium text-base lg:text-lg 3xl:text-2xl leading-relaxed">
+                <p>M/s Reddy Structures Pvt Ltd</p>
+                <p># 133/1, The Residency 2nd Floor, Residency Road, Bangalore -560 025</p>
+              </div>
+              <div class="font-satoshi text-charcoal-dark font-medium text-base lg:text-lg 3xl:text-2xl leading-[1.8] tracking-tight">
+                <p><a href="tel:18002081333" class="hover:text-brand transition-colors">18002081333</a></p>
+                <p><a href="mailto:marketing@mahaveergroup.in" class="hover:text-brand transition-colors">marketing@mahaveergroup.in</a></p>
+              </div>
+            </div>
+            <div class="flex items-center gap-5 sm:gap-7">
+              <a href="#" aria-label="Instagram" class="icon-btn text-charcoal-dark hover:text-brand"><img src="assets/icons/icon-instagram.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="" /></a>
+              <a href="#" aria-label="Facebook" class="icon-btn text-charcoal-dark hover:text-brand"><img src="assets/icons/icon-facebook.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="" /></a>
+              <a href="#" aria-label="LinkedIn" class="icon-btn text-charcoal-dark hover:text-brand"><img src="assets/icons/icon-linkedin.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="" /></a>
+              <a href="#" aria-label="Pinterest" class="icon-btn text-charcoal-dark hover:text-brand"><img src="assets/icons/icon-pinterest.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="" /></a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-[repeat(3,minmax(140px,1fr))] gap-x-6 sm:gap-x-8 gap-y-8 sm:gap-y-10">
+            <div>
+              <h3 class="font-satoshi font-medium text-charcoal-dark text-lg sm:text-xl lg:text-2xl lgg:text-[26px] 3xl:text-[30px] mb-3 sm:mb-5">Communities</h3>
+              <ul class="font-satoshi space-y-2 sm:space-y-3 text-charcoal-dark/80 text-sm sm:text-base 3xl:text-lg">
+                <li><a href="home.html#projects" class="hover:text-brand transition-colors">Ongoing Projects</a></li>
+                <li><a href="home.html#projects" class="hover:text-brand transition-colors">Ready to Move</a></li>
+                <li><a href="home.html#projects" class="hover:text-brand transition-colors">New Launches</a></li>
+                <li><a href="home.html#projects" class="hover:text-brand transition-colors">Luxury Apartments</a></li>
+                <li><a href="home.html#projects" class="hover:text-brand transition-colors">Villas &amp; Row Houses</a></li>
+                <li><a href="home.html#projects" class="hover:text-brand transition-colors">Premium Communities</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-satoshi font-medium text-charcoal-dark text-lg sm:text-xl lg:text-2xl lgg:text-[26px] 3xl:text-[30px] mb-3 sm:mb-5">Developments</h3>
+              <ul class="font-satoshi space-y-2 sm:space-y-3 text-charcoal-dark/80 text-sm sm:text-base 3xl:text-lg">
+                <li><a href="#" class="hover:text-brand transition-colors">Residential</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Commercial</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Mixed-Use Developments</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Integrated Townships</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Luxury Residences</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Upcoming Projects</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-satoshi font-medium text-charcoal-dark text-lg sm:text-xl lg:text-2xl lgg:text-[26px] 3xl:text-[30px] mb-3 sm:mb-5">Explore</h3>
+              <ul class="font-satoshi space-y-2 sm:space-y-3 text-charcoal-dark/80 text-sm sm:text-base 3xl:text-lg">
+                <li><a href="home.html#lifestyle" class="hover:text-brand transition-colors">Lifestyle</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Amenities</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Homeowner Stories</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Awards &amp; Recognition</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Sustainability</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">The Mahaveer Journal</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-satoshi font-medium text-charcoal-dark text-lg sm:text-xl lg:text-2xl lgg:text-[26px] 3xl:text-[30px] mb-3 sm:mb-5">About Mahaveer</h3>
+              <ul class="font-satoshi space-y-2 sm:space-y-3 text-charcoal-dark/80 text-sm sm:text-base 3xl:text-lg">
+                <li><a href="about.html" class="hover:text-brand transition-colors">Our Story</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Leadership</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Why Mahaveer</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">CSR Initiatives</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Investor Relations</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Contact Us</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-satoshi font-medium text-charcoal-dark text-lg sm:text-xl lg:text-2xl lgg:text-[26px] 3xl:text-[30px] mb-3 sm:mb-5">Customer Care</h3>
+              <ul class="font-satoshi space-y-2 sm:space-y-3 text-charcoal-dark/80 text-sm sm:text-base 3xl:text-lg">
+                <li><a href="home.html#book-a-visit" class="hover:text-brand transition-colors">Book a Site Visit</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Schedule a Consultation</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Download Brochure</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Construction Updates</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">FAQs</a></li>
+                <li><a href="#" class="hover:text-brand transition-colors">Support</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 sm:mt-14 lg:mt-[91px] pt-6 sm:pt-8 border-t border-charcoal/10 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
+          <div class="font-satoshi flex flex-wrap items-center gap-3 sm:gap-8 lg:gap-12 text-charcoal-dark/80 text-xs sm:text-sm">
+            <a href="#" class="hover:text-brand transition-colors">Privacy Policy</a>
+            <a href="#" class="hover:text-brand transition-colors">Terms &amp; Conditions</a>
+            <span>Copyright &copy; 2026 Mahaveer Group All Rights Reserved</span>
+          </div>
+          <button id="back-to-top" aria-label="Back to top" class="icon-btn w-12 h-12 sm:w-[60px] sm:h-[60px] rounded-[11px] bg-brand flex items-center justify-center shrink-0">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M6 11L12 5L18 11"/></svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
