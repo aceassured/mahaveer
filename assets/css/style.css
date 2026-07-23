@@ -102,8 +102,10 @@
 }
 @font-face {
   font-family: "Brittany";
-  src: url("../fonts/Brittney%20Signature.otf") format("opentype");
+  src: url("../fonts/BrittanySignature.ttf") format("truetype");
   font-display: swap;
+  font-weight: 400;
+  font-style: italic;
 }
 
 html {
@@ -220,6 +222,47 @@ body {
 }
 .icon-btn:hover {
   transform: translateY(-3px) scale(1.05);
+}
+
+/* ==========================================================================
+   Custom cursor (Crest) — fine-pointer devices only
+   ========================================================================== */
+.cursor-inner,
+.cursor-outer {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cursor-inner,
+  .cursor-outer {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 999px;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+  }
+  .cursor-inner {
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+  }
+  .cursor-outer {
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+  }
+  .cursor-outer.cursor-hover {
+    width: 56px;
+    height: 56px;
+    border-color: #ffffff;
+  }
+  body:has(.cursor-inner) {
+    cursor: none;
+  }
 }
 
 /* ==========================================================================
