@@ -149,6 +149,28 @@ body {
 }
 
 /* ==========================================================================
+   Preloader
+   ========================================================================== */
+#preloader {
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.preloader-ring {
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #bb8b36;
+  animation: preloader-spin 0.9s linear infinite;
+}
+@keyframes preloader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
    Header
    ========================================================================== */
 #site-header {

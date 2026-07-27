@@ -2,6 +2,38 @@
   "use strict";
 
   /* ---------------------------------------------------------------------
+   * Preloader (Crest) — shows the Crest favicon mark until every <img> on
+   * the page has finished loading (or errored), then fades out. window's
+   * "load" event is kept as a fallback in case an image is added/changed
+   * after this initial scan.
+   * ------------------------------------------------------------------- */
+  var preloader = document.getElementById("preloader");
+  if (preloader) {
+    var preloaderImgs = Array.prototype.slice.call(document.querySelectorAll("img"));
+    var pendingImgs = preloaderImgs.filter(function (img) {
+      return !img.complete;
+    }).length;
+    var hidePreloader = function () {
+      preloader.classList.add("is-hidden");
+    };
+    if (pendingImgs === 0) {
+      hidePreloader();
+    } else {
+      preloaderImgs.forEach(function (img) {
+        if (!img.complete) {
+          img.addEventListener("load", onPreloaderImgDone);
+          img.addEventListener("error", onPreloaderImgDone);
+        }
+      });
+    }
+    window.addEventListener("load", hidePreloader);
+  }
+  function onPreloaderImgDone() {
+    pendingImgs -= 1;
+    if (pendingImgs <= 0) hidePreloader();
+  }
+
+  /* ---------------------------------------------------------------------
    * GSAP shared setup (Crest) — only present on pages that load the GSAP
    * CDN scripts (currently crest.html only); every block below that uses
    * GSAP guards on `window.gsap` so this file keeps working unchanged on
@@ -141,10 +173,18 @@
    * to still read as a change even though it's the same file.
    * ------------------------------------------------------------------- */
   var floorplanTransforms = { master: "none", "2bhk": "scaleX(-1)", "3bhk": "rotate(180deg)" };
+  var floorplanTitles = {
+    master: "Unlock the master plan",
+    "2bhk": "Unlock the 2 BHK plan",
+    "3bhk": "Unlock the 3 BHK plan",
+  };
+  var floorplanPlanNames = { master: "Master Plan", "2bhk": "2 BHK", "3bhk": "3 BHK" };
   document.querySelectorAll("[data-floor-plan-tabs]").forEach(function (group) {
     var section = group.closest("section");
     var tabs = group.querySelectorAll(".floor-plan-tab");
     var img = section ? section.querySelector("[data-floorplan-img]") : null;
+    var titleEl = section ? section.querySelector("[data-floorplan-title]") : null;
+    var whatsappLink = section ? section.querySelector("[data-floorplan-whatsapp]") : null;
     tabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
         tabs.forEach(function (t) {
@@ -156,6 +196,12 @@
         tab.classList.add("bg-[#191919]", "text-white", "is-active");
         tab.querySelector(".tab-num").classList.remove("opacity-40");
         if (img) img.style.transform = floorplanTransforms[tab.dataset.tab] || "none";
+        if (titleEl) titleEl.textContent = floorplanTitles[tab.dataset.tab] || titleEl.textContent;
+        if (whatsappLink) {
+          var planName = floorplanPlanNames[tab.dataset.tab] || "floor plan";
+          var message = "Hi, I'd like to know more about the " + planName + " for Mahaveer Crest. Please share the plans.";
+          whatsappLink.href = "https://wa.me/918072515731?text=" + encodeURIComponent(message);
+        }
       });
     });
   });
@@ -222,6 +268,7 @@
     var subtext = copy ? copy.querySelector("p") : null;
     var grid = section ? section.querySelector("[data-amenities-grid]") : null;
     var items = grid ? grid.querySelectorAll("[data-category]") : [];
+    var image = section ? section.querySelector("[data-amenities-image]") : null;
     tabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
         tabs.forEach(function (t) {
@@ -232,6 +279,7 @@
         tab.classList.add("bg-crest", "text-white", "is-active");
         if (heading && tab.dataset.heading) heading.textContent = tab.dataset.heading;
         if (subtext && tab.dataset.subtext) subtext.textContent = tab.dataset.subtext;
+        if (image && tab.dataset.image) image.src = tab.dataset.image;
         items.forEach(function (item) {
           item.classList.toggle("hidden", item.dataset.category !== tab.dataset.category);
         });
@@ -355,6 +403,34 @@
   }
 
   /* ---------------------------------------------------------------------
+   * Scroll-scrubbed text reveal (Crest) — [data-scrub-reveal] opt-in,
+   * used for the Project Highlights heading. Unlike [data-split-reveal]
+   * above (fires once, "top 85%"), this ties each word's opacity
+   * directly to scroll position via scrub, so it un-reveals naturally
+   * when the user scrolls back up — matching the reference site's
+   * highlights-section text animation.
+   * ------------------------------------------------------------------- */
+  if (window.gsap && window.ScrollTrigger && window.SplitText && !prefersReducedMotion) {
+    document.querySelectorAll("[data-scrub-reveal]").forEach(function (el) {
+      var scrubSplit = new SplitText(el, { type: "words" });
+      gsap.set(scrubSplit.words, { opacity: 0, y: 20, filter: "blur(8px)" });
+      gsap.to(scrubSplit.words, {
+        opacity: 1,
+        y: 0,
+        filter: "blur(0px)",
+        stagger: 0.08,
+        ease: "none",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 90%",
+          end: "top 30%",
+          scrub: 0.3,
+        },
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------------------
    * Custom cursor (Crest) — fine-pointer devices only. Uses GSAP quickTo
    * for smooth interpolation instead of a raw CSS-transition trailing lag.
    * ------------------------------------------------------------------- */
@@ -393,7 +469,7 @@
   function animateCounterVanilla(el) {
     var target = parseInt(el.getAttribute("data-count-to"), 10) || 0;
     var suffix = el.getAttribute("data-suffix") || "";
-    var duration = 2000;
+    var duration = 1100;
     var startTime = null;
 
     function step(timestamp) {
@@ -422,7 +498,7 @@
       var proxy = { value: 0 };
       gsap.to(proxy, {
         value: target,
-        duration: 2,
+        duration: 1.1,
         ease: "none",
         scrollTrigger: { trigger: el, start: "top 85%", once: true },
         onUpdate: function () {
@@ -539,4 +615,199 @@
   backToTop.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  /* ---------------------------------------------------------------------
+   * Download Brochure (Crest) — brief "preparing" loading state before
+   * the actual PDF download starts (file is ~31MB), across every
+   * "Download Brochure" button/link on the page.
+   * ------------------------------------------------------------------- */
+  document.querySelectorAll("[data-download-brochure]").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      if (link.dataset.loading === "true") {
+        e.preventDefault();
+        return;
+      }
+      e.preventDefault();
+      var label = link.querySelector(".brochure-label");
+      var originalText = label ? label.textContent : "";
+      link.dataset.loading = "true";
+      link.classList.add("opacity-70", "pointer-events-none");
+      if (label) label.textContent = "Preparing download...";
+      setTimeout(function () {
+        var tempLink = document.createElement("a");
+        tempLink.href = link.getAttribute("href");
+        tempLink.download = link.getAttribute("download") || "";
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
+        if (label) label.textContent = originalText;
+        link.classList.remove("opacity-70", "pointer-events-none");
+        link.dataset.loading = "false";
+      }, 700);
+    });
+  });
+
+  /* ---------------------------------------------------------------------
+   * Enquiry forms (Crest) — shared validation + submit logic for the
+   * three lead forms on this page: the hero lead-gen card, the fixed
+   * quick-enquiry bar, and the CTA modal. Submissions POST to a Google
+   * Sheets Apps Script Web App so entries land in one central sheet
+   * (exportable as .xlsx) without needing a real backend on this static
+   * site. Paste your deployed Web App URL below once set up.
+   * ------------------------------------------------------------------- */
+  var GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwLaCnXiE5v1nAsDLGvMpEOKYB_OAgkzxR8_Ba9z-n7u7x7AkYdSxrcjXdJeyzRt66z/exec"; // TODO: paste your Apps Script Web App URL here
+
+  var NAME_PATTERN = /^[A-Za-z\s]{2,}$/;
+  var MOBILE_PATTERN = /^[6-9]\d{9}$/;
+  var EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function setFieldError(input, message) {
+    var wrapper = input.closest("label");
+    var errorEl = wrapper ? wrapper.querySelector(".field-error") : null;
+    if (errorEl) {
+      errorEl.textContent = message || "";
+      errorEl.classList.toggle("hidden", !message);
+    }
+    input.classList.toggle("ring-2", !!message);
+    input.classList.toggle("ring-red-500", !!message);
+  }
+
+  function validateField(input, rules) {
+    if (input.type === "checkbox") {
+      var checkboxMessage = rules.required && !input.checked ? rules.message || "Please accept to continue." : "";
+      setFieldError(input, checkboxMessage);
+      return !checkboxMessage;
+    }
+    var value = (input.value || "").trim();
+    var message = "";
+    if (rules.required && !value) {
+      message = "This field is required.";
+    } else if (value && rules.pattern && !rules.pattern.test(value)) {
+      message = rules.message;
+    }
+    setFieldError(input, message);
+    return !message;
+  }
+
+  function initEnquiryForm(form, opts) {
+    if (!form) return;
+    var source = (opts && opts.source) || "unknown";
+    var fields = {
+      name: form.querySelector('input[name="name"]'),
+      mobile: form.querySelector('input[name="mobile"]'),
+      email: form.querySelector('input[name="email"]'),
+      interestedIn: form.querySelector('select[name="interestedIn"]'),
+      nextStep: form.querySelector('select[name="nextStep"]'),
+      consent: form.querySelector('input[name="consent"]'),
+    };
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var valid = true;
+      if (fields.name) valid = validateField(fields.name, { required: true, pattern: NAME_PATTERN, message: "Enter a valid name." }) && valid;
+      if (fields.mobile) valid = validateField(fields.mobile, { required: true, pattern: MOBILE_PATTERN, message: "Enter a valid 10-digit mobile number." }) && valid;
+      if (fields.email) valid = validateField(fields.email, { required: true, pattern: EMAIL_PATTERN, message: "Enter a valid email address." }) && valid;
+      if (fields.interestedIn) valid = validateField(fields.interestedIn, { required: true }) && valid;
+      if (fields.nextStep) valid = validateField(fields.nextStep, { required: true }) && valid;
+      if (fields.consent) valid = validateField(fields.consent, { required: true, message: "Please accept to be contacted before submitting." }) && valid;
+      if (!valid) return;
+
+      var payload = {
+        source: source,
+        name: fields.name ? fields.name.value.trim() : "",
+        mobile: fields.mobile ? fields.mobile.value.trim() : "",
+        email: fields.email ? fields.email.value.trim() : "",
+        interestedIn: fields.interestedIn ? fields.interestedIn.value : "",
+        nextStep: fields.nextStep ? fields.nextStep.value : "",
+        timestamp: new Date().toISOString(),
+      };
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+
+      var done = function () {
+        if (submitBtn) submitBtn.disabled = false;
+        form.reset();
+        if (opts && opts.onSuccess) {
+          opts.onSuccess();
+        } else if (submitBtn) {
+          var original = submitBtn.textContent;
+          submitBtn.textContent = "Sent! We'll call you shortly.";
+          setTimeout(function () {
+            submitBtn.textContent = original;
+          }, 3000);
+        }
+      };
+
+      if (GOOGLE_SHEETS_WEBHOOK_URL) {
+        fetch(GOOGLE_SHEETS_WEBHOOK_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload),
+        })
+          .then(done)
+          .catch(done);
+      } else {
+        console.warn("Enquiry submitted (Google Sheets webhook URL not configured yet):", payload);
+        done();
+      }
+    });
+  }
+
+  initEnquiryForm(document.getElementById("hero-enquiry-form"), { source: "Hero Form" });
+  initEnquiryForm(document.getElementById("fixed-enquiry-bar"), { source: "Quick Enquiry Bar" });
+  initEnquiryForm(document.getElementById("enquiry-form"), {
+    source: "Enquiry Modal",
+    onSuccess: function () {
+      var formWrap = document.getElementById("enquiry-modal-form-wrap");
+      var success = document.getElementById("enquiry-modal-success");
+      if (formWrap) formWrap.classList.add("hidden");
+      if (success) {
+        success.classList.remove("hidden");
+        success.classList.add("flex");
+      }
+    },
+  });
+
+  /* ---------------------------------------------------------------------
+   * Enquiry modal (Crest) — opened by any [data-open-enquiry-modal]
+   * trigger across the page (hero CTA, floating rails, header, Schedule
+   * a Guided Visit, Contact Us, etc), so every button that leads to the
+   * lead form does so unambiguously instead of a plain scroll/redirect.
+   * ------------------------------------------------------------------- */
+  var enquiryModal = document.getElementById("enquiry-modal");
+  var enquiryModalBackdrop = document.getElementById("enquiry-modal-backdrop");
+  if (enquiryModal && enquiryModalBackdrop) {
+    var openEnquiryModal = function () {
+      enquiryModal.classList.remove("opacity-0", "pointer-events-none");
+      enquiryModalBackdrop.classList.remove("opacity-0", "pointer-events-none");
+      document.body.style.overflow = "hidden";
+    };
+    var closeEnquiryModal = function () {
+      enquiryModal.classList.add("opacity-0", "pointer-events-none");
+      enquiryModalBackdrop.classList.add("opacity-0", "pointer-events-none");
+      document.body.style.overflow = "";
+    };
+    document.querySelectorAll("[data-open-enquiry-modal]").forEach(function (trigger) {
+      trigger.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (mobileMenu.classList.contains("is-open")) closeMenu();
+        openEnquiryModal();
+      });
+    });
+    document.getElementById("enquiry-modal-close").addEventListener("click", closeEnquiryModal);
+    try {
+      if (!sessionStorage.getItem("crestEnquiryModalShown")) {
+        sessionStorage.setItem("crestEnquiryModalShown", "true");
+        setTimeout(openEnquiryModal, 2000);
+      }
+    } catch (err) {
+      // sessionStorage unavailable (e.g. privacy mode) — skip auto-open, manual triggers still work.
+    }
+    enquiryModalBackdrop.addEventListener("click", closeEnquiryModal);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeEnquiryModal();
+    });
+  }
 })();

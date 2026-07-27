@@ -47,6 +47,14 @@
 </head>
 <body class="bg-white text-charcoal font-satoshi antialiased overflow-x-hidden">
 
+  <!-- ============================== PRELOADER ============================== -->
+  <div id="preloader" class="fixed inset-0 z-[100] flex items-center justify-center bg-white">
+    <div class="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center">
+      <span class="preloader-ring absolute inset-0 rounded-full" aria-hidden="true"></span>
+      <img src="assets/icons/crest-favicon.png" alt="" class="preloader-logo relative z-10 w-10 h-10 sm:w-12 sm:h-12" />
+    </div>
+  </div>
+
   <!-- ============================== HEADER ============================== -->
   <header id="site-header" class="fixed font-satoshi top-0 inset-x-0 z-50">
     <div class="mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px] flex items-center justify-between h-[88px] lg:h-[117px]">
@@ -65,18 +73,18 @@
       <nav class="hidden llg:flex items-center gap-5 xll:gap-7 2xl:gap-9 text-white font-satoshi text-sm xll:text-base whitespace-nowrap">
         <a href="#why-crest" class="nav-link font-satoshi">Why Crest</a>
         <a href="#highlights" class="nav-link font-satoshi">Highlights</a>
-        <a href="#floor-plans" class="nav-link font-satoshi">Floor Plans</a>
         <a href="#amenities" class="nav-link font-satoshi">Amenities</a>
+        <a href="#floor-plans" class="nav-link font-satoshi">Floor Plans</a>
         <a href="#location" class="nav-link font-satoshi">Location</a>
-        <a href="#about-mahaveer" class="nav-link font-satoshi">About Mahaveer</a>
         <a href="#gallery" class="nav-link font-satoshi">Gallery</a>
+        <a href="#about-mahaveer" class="nav-link font-satoshi">About Mahaveer</a>
       </nav>
 
       <div class="flex items-center gap-3 sm:gap-4">
-        <a href="tel:18002081999" class="hidden sm:inline-flex items-center gap-2.5 bg-[#f5f1ea] text-[#344145] text-sm xll:text-base font-medium px-4 lg:px-5 py-2 lg:py-2.5 rounded-[11px] icon-btn">
-          <img src="assets/icons/icon-phone.svg" class="w-4 h-4 lg:w-5 lg:h-5" alt="" />
-          1800 2081 999
-        </a>
+        <button type="button" data-open-enquiry-modal class="hidden sm:inline-flex items-center gap-2.5 bg-[#f5f1ea] text-[#344145] text-sm xll:text-base font-medium px-4 lg:px-5 py-2 lg:py-2.5 rounded-[11px] icon-btn">
+          <!-- <img src="assets/icons/icon-phone.svg" class="w-4 h-4 lg:w-5 lg:h-5" alt="" /> -->
+          Enquire Now
+        </button>
         <button id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" class="llg:hidden icon-btn flex items-center justify-center w-[42px] h-[42px] rounded-full">
           <img src="assets/icons/icon-hamburger.svg" class="w-6 h-6" alt="" />
         </button>
@@ -96,17 +104,17 @@
     <nav class="flex flex-col gap-1 px-6 py-8 text-xl font-satoshi overflow-y-auto">
       <a href="#why-crest" class="font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">Why Crest</a>
       <a href="#highlights" class="font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">Highlights</a>
-      <a href="#floor-plans" class="font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">Floor Plans</a>
       <a href="#amenities" class="font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">Amenities</a>
+      <a href="#floor-plans" class="font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">Floor Plans</a>
       <a href="#location" class="font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">Location</a>
-      <a href="#about-mahaveer" class="font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">About Mahaveer</a>
       <a href="#gallery" class="font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">Gallery</a>
+      <a href="#about-mahaveer" class="font-satoshi py-3.5 border-b border-white/10 hover:text-brand transition-colors">About Mahaveer</a>
     </nav>
     <div class="mt-auto px-6 pb-10 pt-4 shrink-0">
-      <a href="tel:18002081999" class="flex items-center justify-center gap-2.5 bg-crest text-white py-3.5 rounded-[11px] font-medium">
+      <button type="button" data-open-enquiry-modal class="w-full flex items-center justify-center gap-2.5 bg-crest text-white py-3.5 rounded-[11px] font-medium">
         <img src="assets/icons/icon-phone.svg" class="w-5 h-5 invert" alt="" />
-        1800 2081 999
-      </a>
+        Enquire Now
+      </button>
     </div>
   </aside>
 
@@ -148,14 +156,18 @@
                 <p class="font-optima text-white text-xl sm:text-[28px]">2 &amp; 3 BHK</p>
               </div>
               <div class="flex flex-col gap-2 min-w-0">
+                <p class="font-satoshi text-white text-sm sm:text-base lg:text-lg">Starting Price</p>
+                <p class="font-optima text-white text-xl sm:text-[28px]">₹1.04 Cr*</p>
+              </div>
+              <div class="flex flex-col gap-2 min-w-0">
                 <p class="font-satoshi text-white text-sm sm:text-base lg:text-lg">RERA No.</p>
                 <p class="font-optima text-white text-xl sm:text-[28px] break-words">PRM/KA/RERA/1251/446/PR/170726/008823</p>
               </div>
             </div>
             <div class="flex flex-wrap gap-3 sm:gap-4">
-              <a href="#floor-plans" class="btn font-satoshi inline-flex items-center justify-center bg-crest text-white text-base sm:text-lg 3xl:text-[20px] font-medium 3xl:font-normal px-6 sm:px-[26px] py-3.5 rounded-[11px]">Enquire Now</a>
-              <a href="#" class="btn font-satoshi inline-flex items-center gap-2.5 bg-white text-[#191919] text-base sm:text-lg 3xl:text-[20px] font-medium 3xl:font-normal pl-6 sm:pl-[26px] pr-5 sm:pr-5 py-3.5 rounded-[11px]">
-                Download Brochure
+              <button type="button" data-open-enquiry-modal class="btn font-satoshi inline-flex items-center justify-center bg-crest text-white text-base sm:text-lg 3xl:text-[20px] font-medium 3xl:font-normal px-6 sm:px-[26px] py-3.5 rounded-[11px]">Enquire Now</button>
+              <a href="assets/files/Crest-Brochure.pdf" download="Mahaveer-Crest-Brochure.pdf" data-download-brochure class="btn font-satoshi inline-flex items-center gap-2.5 bg-white text-[#191919] text-base sm:text-lg 3xl:text-[20px] font-medium 3xl:font-normal pl-6 sm:pl-[26px] pr-5 sm:pr-5 py-3.5 rounded-[11px]">
+                <span class="brochure-label">Download Brochure</span>
                 <img src="assets/icons/icon-arrow-down.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="" />
               </a>
             </div>
@@ -185,46 +197,56 @@
               </div>
             </div>
 
-            <form class="flex flex-col gap-6 sm:gap-7">
+            <form id="hero-enquiry-form" novalidate class="flex flex-col gap-6 sm:gap-7">
               <div class="flex flex-col gap-5 sm:gap-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <label class="flex flex-col gap-2">
                     <span class="font-satoshi text-[#3b3b3b] text-sm 3xl:text-base">Full name</span>
-                    <input type="text" placeholder="Enter Your Name" class="font-satoshi bg-[#f2f2f2] placeholder:text-[#3b3b3b]/40 text-[#3b3b3b] text-sm sm:text-base rounded-[8px] px-4 sm:px-5 py-4 outline-none focus:ring-2 focus:ring-crest/40" />
+                    <input type="text" name="name" placeholder="Enter Your Name" class="font-satoshi bg-[#f2f2f2] placeholder:text-[#3b3b3b]/40 text-[#3b3b3b] text-sm sm:text-base rounded-[8px] px-4 sm:px-5 py-4 outline-none focus:ring-2 focus:ring-crest/40" />
+                    <span class="field-error hidden text-xs text-red-600"></span>
                   </label>
                   <label class="flex flex-col gap-2">
                     <span class="font-satoshi text-[#3b3b3b] text-sm 3xl:text-base">Mobile Number</span>
-                    <input type="tel" placeholder="Mobile Number" class="font-satoshi bg-[#f2f2f2] placeholder:text-[#3b3b3b]/40 text-[#3b3b3b] text-sm sm:text-base rounded-[8px] px-4 sm:px-5 py-4 outline-none focus:ring-2 focus:ring-crest/40" />
+                    <input type="tel" name="mobile" placeholder="Mobile Number" class="font-satoshi bg-[#f2f2f2] placeholder:text-[#3b3b3b]/40 text-[#3b3b3b] text-sm sm:text-base rounded-[8px] px-4 sm:px-5 py-4 outline-none focus:ring-2 focus:ring-crest/40" />
+                    <span class="field-error hidden text-xs text-red-600"></span>
                   </label>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <label class="flex flex-col gap-2">
                     <span class="font-satoshi text-[#3b3b3b] text-sm 3xl:text-base">Interested In</span>
                     <div class="relative">
-                      <select class="w-full appearance-none font-satoshi bg-[#f2f2f2] text-[#3b3b3b]/40 text-sm sm:text-base rounded-[8px] pl-4 sm:pl-5 pr-11 py-4 outline-none focus:ring-2 focus:ring-crest/40">
-                        <option>Interested In</option>
+                      <select name="interestedIn" class="w-full appearance-none font-satoshi bg-[#f2f2f2] text-[#3b3b3b] text-sm sm:text-base rounded-[8px] pl-4 sm:pl-5 pr-11 py-4 outline-none focus:ring-2 focus:ring-crest/40">
+                        <option value="">Interested In</option>
                         <option>2 BHK</option>
                         <option>3 BHK</option>
                       </select>
                       <img src="assets/icons/icon-arrow-down-dark.svg" class="w-5 h-5 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" alt="" />
                     </div>
+                    <span class="field-error hidden text-xs text-red-600"></span>
                   </label>
                   <label class="flex flex-col gap-2">
                     <span class="font-satoshi text-[#3b3b3b] text-sm 3xl:text-base">Next Step</span>
                     <div class="relative">
-                      <select class="w-full appearance-none font-satoshi bg-[#f2f2f2] text-[#3b3b3b]/40 text-sm sm:text-base rounded-[8px] pl-4 sm:pl-5 pr-11 py-4 outline-none focus:ring-2 focus:ring-crest/40">
-                        <option>Next Step</option>
+                      <select name="nextStep" class="w-full appearance-none font-satoshi bg-[#f2f2f2] text-[#3b3b3b] text-sm sm:text-base rounded-[8px] pl-4 sm:pl-5 pr-11 py-4 outline-none focus:ring-2 focus:ring-crest/40">
+                        <option value="">Next Step</option>
                         <option>Get Callback</option>
                         <option>Book Site Visit</option>
                       </select>
                       <img src="assets/icons/icon-arrow-down-dark.svg" class="w-5 h-5 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" alt="" />
                     </div>
+                    <span class="field-error hidden text-xs text-red-600"></span>
                   </label>
                 </div>
               </div>
-              <div class="flex flex-col gap-2.5">
+              <div class="flex flex-col gap-3">
+                <label class="flex flex-col gap-1.5">
+                  <span class="flex items-start gap-2.5">
+                    <input type="checkbox" name="consent" class="mt-0.5 w-4 h-4 shrink-0 accent-crest" />
+                    <span class="font-satoshi text-[#3b3b3b] text-[11px] sm:text-xs leading-relaxed">I agree to be contacted by Mahaveer Group and its authorised representatives regarding this enquiry.</span>
+                  </span>
+                  <span class="field-error hidden text-xs text-red-600"></span>
+                </label>
                 <button type="submit" class="btn font-satoshi w-full bg-crest text-white text-base sm:text-lg 3xl:text-[20px] font-medium 3xl:font-normal px-6 py-4 rounded-[11px]">Send Me the Details</button>
-                <p class="font-satoshi text-[#3b3b3b] text-[11px] sm:text-xs leading-relaxed">By submitting, you agree to be contacted by Mahaveer Group and its authorised representatives. Update this consent copy to match your privacy policy.</p>
               </div>
             </form>
           </div>
@@ -243,20 +265,16 @@
             <p class="font-satoshi text-white text-sm sm:text-base lg:text-lg whitespace-nowrap">Community</p>
           </div>
           <div class="shrink-0 snap-start border-l border-white/70 pl-4 sm:pl-6 3xl:pl-[30px] 3xl:border-white">
-            <p class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[36px] xll:text-[42px] 3xl:text-[58px] leading-[1.4] whitespace-nowrap">Lakeside</p>
-            <p class="font-satoshi text-white text-sm sm:text-base lg:text-lg whitespace-nowrap">View</p>
+            <p data-count-to="520" data-suffix="" class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[36px] xll:text-[42px] 3xl:text-[58px] leading-[1.4] whitespace-nowrap">0</p>
+            <p class="font-satoshi text-white text-sm sm:text-base lg:text-lg whitespace-nowrap">Residences</p>
           </div>
           <div class="shrink-0 snap-start border-l border-white/70 pl-4 sm:pl-6 3xl:pl-[30px] 3xl:border-white">
-            <p class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[36px] xll:text-[42px] 3xl:text-[58px] leading-[1.4] whitespace-nowrap">Low density</p>
-            <p class="font-satoshi text-white text-sm sm:text-base lg:text-lg whitespace-nowrap">Living</p>
+            <p class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[36px] xll:text-[42px] 3xl:text-[58px] leading-[1.4] whitespace-nowrap">B+G+4</p>
+            <p class="font-satoshi text-white text-sm sm:text-base lg:text-lg whitespace-nowrap">Floors</p>
           </div>
           <div class="shrink-0 snap-start border-l border-white/70 pl-4 sm:pl-6 3xl:pl-[30px] 3xl:border-white">
-            <p data-count-to="75" data-suffix="%" class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[36px] xll:text-[42px] 3xl:text-[58px] leading-[1.4] whitespace-nowrap">0</p>
-            <p class="font-satoshi text-white text-sm sm:text-base lg:text-lg whitespace-nowrap">Open space</p>
-          </div>
-          <div class="shrink-0 snap-start border-l border-white/70 pl-4 sm:pl-6 3xl:pl-[30px] 3xl:border-white">
-            <p data-count-to="40" data-suffix="+" class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[36px] xll:text-[42px] 3xl:text-[58px] leading-[1.4] whitespace-nowrap">0</p>
-            <p class="font-satoshi text-white text-sm sm:text-base lg:text-lg whitespace-nowrap">Amenities</p>
+            <p class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[36px] xll:text-[42px] 3xl:text-[58px] leading-[1.4] whitespace-nowrap">2 &amp; 3</p>
+            <p class="font-satoshi text-white text-sm sm:text-base lg:text-lg whitespace-nowrap">BHK</p>
           </div>
         </div>
       </div>
@@ -266,9 +284,9 @@
   <!-- Floating vertical CTA rail: a horizontal row rotated -90deg as a whole (matches Figma exactly) -->
   <div class="hidden lg:flex items-center justify-center fixed right-0 xl:right-2 top-1/2 -translate-y-1/2 z-40 w-[55px] h-[435px]">
     <div class="-rotate-90 shrink-0 flex items-center gap-[15px]">
-      <a href="#floor-plans" class="btn font-satoshi inline-flex items-center justify-center bg-crest text-white text-base 3xl:text-[20px] font-medium 3xl:font-normal px-6 py-3.5 rounded-[11px] whitespace-nowrap">Enquire Now</a>
-      <a href="#" class="btn font-satoshi inline-flex items-center gap-2.5 bg-white border border-crest text-[#191919] text-base 3xl:text-[20px] font-medium 3xl:font-normal pl-6 pr-5 py-3.5 rounded-[11px] whitespace-nowrap">
-        Download Brochure
+      <button type="button" data-open-enquiry-modal class="btn font-satoshi inline-flex items-center justify-center bg-crest text-white text-base 3xl:text-[20px] font-medium 3xl:font-normal px-6 py-3.5 rounded-[11px] whitespace-nowrap">Enquire Now</button>
+      <a href="assets/files/Crest-Brochure.pdf" download="Mahaveer-Crest-Brochure.pdf" data-download-brochure class="btn font-satoshi inline-flex items-center gap-2.5 bg-white border border-crest text-[#191919] text-base 3xl:text-[20px] font-medium 3xl:font-normal pl-6 pr-5 py-3.5 rounded-[11px] whitespace-nowrap">
+        <span class="brochure-label">Download Brochure</span>
         <img src="assets/icons/icon-arrow-down.svg" class="w-5 h-5" alt="" />
       </a>
     </div>
@@ -277,25 +295,34 @@
   <!-- Floating vertical CTA rail: a horizontal row rotated -90deg as a whole (matches Figma exactly) -->
   <div class="flex lg:hidden items-center justify-center fixed left-0 right-0 bottom-0 z-40">
     <div class="shrink-0 flex items-center]">
-      <a href="#floor-plans" class="btn font-satoshi inline-flex items-center justify-center bg-crest text-white text-base font-medium px-6 py-3.5 whitespace-nowrap">Enquire Now</a>
-      <a href="#" class="btn font-satoshi inline-flex items-center gap-2.5 bg-white border border-crest text-[#191919] text-base font-medium pl-6 pr-5 py-3.5 whitespace-nowrap">
-        Download Brochure
+      <button type="button" data-open-enquiry-modal class="btn font-satoshi inline-flex items-center justify-center bg-crest text-white text-base font-medium px-6 py-3.5 whitespace-nowrap">Enquire Now</button>
+      <a href="assets/files/Crest-Brochure.pdf" download="Mahaveer-Crest-Brochure.pdf" data-download-brochure class="btn font-satoshi inline-flex items-center gap-2.5 bg-white border border-crest text-[#191919] text-base font-medium pl-6 pr-5 py-3.5 whitespace-nowrap">
+        <span class="brochure-label">Download Brochure</span>
         <img src="assets/icons/icon-arrow-down.svg" class="w-5 h-5" alt="" />
       </a>
     </div>
   </div>
 
   <!-- Fixed quick-enquiry bar — always visible, matches Figma's "Fixed Form" node -->
-  <div id="fixed-enquiry-bar" class="fixed hidden lg:block bottom-6 inset-x-5 sm:inset-x-8 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-[90%] xl:w-[1133px] z-30 bg-white border border-[#0d2b41]/10 rounded-t-[16px] p-5 sm:p-6 shadow-xl">
-    <div class="flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-6">
+  <form id="fixed-enquiry-bar" novalidate class="fixed hidden lg:block bottom-6 inset-x-5 sm:inset-x-8 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-[90%] xl:w-[1133px] z-30 bg-white border border-[#0d2b41]/10 rounded-t-[16px] p-5 sm:p-6 shadow-xl">
+    <div class="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 flex-1">
-        <input type="text" placeholder="Full name" class="font-satoshi bg-[#f2f2f2] placeholder:text-[#3b3b3b]/40 text-[#3b3b3b] text-sm sm:text-base rounded-[8px] px-4 sm:px-6 py-4 outline-none focus:ring-2 focus:ring-crest/40" />
-        <input type="tel" placeholder="Mobile Number" class="font-satoshi bg-[#f2f2f2] placeholder:text-[#3b3b3b]/40 text-[#3b3b3b] text-sm sm:text-base rounded-[8px] px-4 sm:px-6 py-4 outline-none focus:ring-2 focus:ring-crest/40" />
-        <input type="email" placeholder="Email ID" class="font-satoshi bg-[#f2f2f2] placeholder:text-[#3b3b3b]/40 text-[#3b3b3b] text-sm sm:text-base rounded-[8px] px-4 sm:px-6 py-4 outline-none focus:ring-2 focus:ring-crest/40" />
+        <label class="flex flex-col gap-1">
+          <input type="text" name="name" placeholder="Full name" class="font-satoshi bg-[#f2f2f2] placeholder:text-[#3b3b3b]/40 text-[#3b3b3b] text-sm sm:text-base rounded-[8px] px-4 sm:px-6 py-4 outline-none focus:ring-2 focus:ring-crest/40" />
+          <span class="field-error hidden text-xs text-red-600"></span>
+        </label>
+        <label class="flex flex-col gap-1">
+          <input type="tel" name="mobile" placeholder="Mobile Number" class="font-satoshi bg-[#f2f2f2] placeholder:text-[#3b3b3b]/40 text-[#3b3b3b] text-sm sm:text-base rounded-[8px] px-4 sm:px-6 py-4 outline-none focus:ring-2 focus:ring-crest/40" />
+          <span class="field-error hidden text-xs text-red-600"></span>
+        </label>
+        <label class="flex flex-col gap-1">
+          <input type="email" name="email" placeholder="Email ID" class="font-satoshi bg-[#f2f2f2] placeholder:text-[#3b3b3b]/40 text-[#3b3b3b] text-sm sm:text-base rounded-[8px] px-4 sm:px-6 py-4 outline-none focus:ring-2 focus:ring-crest/40" />
+          <span class="field-error hidden text-xs text-red-600"></span>
+        </label>
       </div>
       <button type="submit" class="btn font-satoshi shrink-0 bg-crest text-white text-sm sm:text-base font-medium px-6 sm:px-[30px] py-4 rounded-[11px]">Submit Now</button>
     </div>
-  </div>
+  </form>
 
   <!-- ============================== WHY MAHAVEER CREST ============================== -->
   <section id="why-crest" class="relative bg-[#E9E5DE] py-16 sm:py-20 lg:py-[100px]">
@@ -310,7 +337,7 @@
           <div class="flex flex-col gap-4 sm:gap-5">
             <p class="font-brittany text-[#BB8B36] leading-[1.5] text-[28px] lg:text-[30px] 3xl:text-[34px]">Why Mahaveer Crest</p>
             <h2 data-split-reveal class="font-optima text-crest leading-[1.3] sm:leading-[1.35] lg:leading-[1.4] text-[28px] sm:text-[36px] lg:text-[46px] 3xl:text-[68px]">Where elevated living finds its natural rhythm.</h2>
-            <p class="font-satoshi text-charcoal text-sm sm:text-base lg:text-lg max-w-[620px]">Crest brings contemporary architecture and nature into harmony. Every element—from landscaped greens to social spaces—is designed to make daily life feel brighter, calmer and more complete.</p>
+            <p class="font-satoshi text-charcoal text-sm sm:text-base lg:text-lg max-w-[620px]">A home should give you room to breathe, not just a roof over your head. Crest is planned around wide open spaces, a quiet lakeside setting and everyday conveniences, so life here feels less like a routine and more like a retreat.</p>
           </div>
 
           <div class="hidden sm:grid grid-cols-1 xs:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
@@ -321,24 +348,24 @@
             </div>
             <div class="bg-white rounded-[16px] p-5 sm:p-6 flex flex-col gap-2.5">
               <img src="assets/icons/icon-why-views.svg" class="w-11 h-11 sm:w-[54px] sm:h-[54px]" alt="" />
-              <h3 class="font-satoshi text-[#191919] text-lg sm:text-xl">Views that slow you down</h3>
-              <p class="font-satoshi text-[#191919]/60 text-sm sm:text-base">A serene lake-view setting that adds calm to everyday life.</p>
+              <h3 class="font-satoshi text-[#191919] text-lg sm:text-xl">A lakeside setting</h3>
+              <p class="font-satoshi text-[#191919]/60 text-sm sm:text-base">Wake up to calm water views instead of the next building's wall.</p>
             </div>
             <div class="bg-white rounded-[16px] p-5 sm:p-6 flex flex-col gap-2.5">
               <img src="assets/icons/icon-why-homes.svg" class="w-11 h-11 sm:w-[54px] sm:h-[54px]" alt="" />
               <h3 class="font-satoshi text-[#191919] text-lg sm:text-xl">Homes that feel effortless</h3>
-              <p class="font-satoshi text-[#191919]/60 text-sm sm:text-base">Thoughtful planning for natural light, ventilation and comfort.</p>
+              <p class="font-satoshi text-[#191919]/60 text-sm sm:text-base">Well-lit, well-ventilated layouts that stay comfortable through the day, with little upkeep needed.</p>
             </div>
             <div class="bg-white rounded-[16px] p-5 sm:p-6 flex flex-col gap-2.5">
               <img src="assets/icons/icon-why-life.svg" class="w-11 h-11 sm:w-[54px] sm:h-[54px]" alt="" />
               <h3 class="font-satoshi text-[#191919] text-lg sm:text-xl">Life beyond four walls</h3>
-              <p class="font-satoshi text-[#191919]/60 text-sm sm:text-base">40+ spaces for fitness, wellness, play and community.</p>
+              <p class="font-satoshi text-[#191919]/60 text-sm sm:text-base">40+ shared spaces for fitness, wellness, play and everyday community.</p>
             </div>
           </div>
 
           <!-- <a href="#" class="btn font-satoshi self-start inline-flex items-center justify-center bg-crest text-white text-base sm:text-lg font-medium px-6 sm:px-[26px] py-3.5 rounded-[11px]">Schedule a Guided Visit</a> -->
-          <a href="#" class="btn font-satoshi self-start inline-flex items-center justify-center gap-2.5 bg-crest text-white text-base font-medium pl-6 pr-5 py-3.5 whitespace-nowrap rounded-[11px]">
-        Download Brochure
+          <a href="assets/files/Crest-Brochure.pdf" download="Mahaveer-Crest-Brochure.pdf" data-download-brochure class="btn font-satoshi self-start inline-flex items-center justify-center gap-2.5 bg-crest text-white text-base font-medium pl-6 pr-5 py-3.5 whitespace-nowrap rounded-[11px]">
+        <span class="brochure-label">Download Brochure</span>
         <img src="assets/icons/arrow-down.svg" class="w-5 h-5" alt="" />
       </a>
         </div>
@@ -355,29 +382,33 @@
       <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-[84px] items-center lg:items-start">
         <div class="reveal flex flex-col gap-3 sm:gap-4 lg:max-w-[420px] 3xl:max-w-[646px] shrink-0">
           <p class="font-brittany text-[#bb8b36] leading-[1.5] text-[28px] lg:text-[30px] 3xl:text-[38px] 3xl:tracking-[0.68px] whitespace-nowrap">Project highlights</p>
-          <h2 data-split-reveal class="font-optima text-white leading-[1.3] sm:leading-[1.35] lg:leading-[1.4] text-[28px] sm:text-[36px] lg:text-[46px] 3xl:text-[68px]">A thoughtfully scaled community. Not just another address</h2>
+          <h2 data-scrub-reveal class="font-optima text-white leading-[1.3] sm:leading-[1.35] lg:leading-[1.4] text-[28px] sm:text-[36px] lg:text-[46px] 3xl:text-[68px]">A thoughtfully scaled community. Not just another address</h2>
         </div>
 
         <div class="reveal z-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-[26px] w-full lg:flex-1 3xl:flex 3xl:flex-wrap 3xl:justify-center 3xl:gap-x-[75px] 3xl:gap-y-[62px] 3xl:w-auto" style="--reveal-delay:150ms">
+          <!-- Hidden for now per client request — kept for easy re-enable later
           <div class="backdrop-blur-sm bg-black/60 rounded-[16px] flex flex-col items-center text-center gap-2.5 px-4 sm:px-6 pt-8 sm:pt-10 pb-6 sm:pb-[30px] 3xl:w-[250px] 3xl:shrink-0">
             <p class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[40px] 3xl:text-[48px] leading-[1.3]">2 &amp; 3</p>
             <p class="font-satoshi text-white text-base sm:text-lg 3xl:text-xl -mt-2">BHK Residences</p>
             <p class="font-satoshi text-white/60 text-sm 3xl:text-base">Designed for families</p>
           </div>
+          -->
           <div class="backdrop-blur-sm bg-black/60 rounded-[16px] flex flex-col items-center text-center gap-2.5 px-4 sm:px-6 pt-8 sm:pt-10 pb-6 sm:pb-[30px] 3xl:w-[250px] 3xl:shrink-0">
-            <p data-count-to="8" data-suffix="" class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[40px] 3xl:text-[48px] leading-[1.3]">0</p>
-            <p class="font-satoshi text-white text-base sm:text-lg 3xl:text-xl -mt-2">Acres of Community</p>
-            <p class="font-satoshi text-white/60 text-sm 3xl:text-base">Living in nature.</p>
+            <p data-count-to="40" data-suffix="+" class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[40px] 3xl:text-[48px] leading-[1.3]">0</p>
+            <p class="font-satoshi text-white text-base sm:text-lg 3xl:text-xl -mt-2">Amenities</p>
+            <p class="font-satoshi text-white/60 text-sm 3xl:text-base">Across the community</p>
           </div>
+          <!-- Hidden for now per client request — kept for easy re-enable later
           <div class="backdrop-blur-sm bg-black/60 rounded-[16px] flex flex-col items-center text-center gap-2.5 px-4 sm:px-6 pt-8 sm:pt-10 pb-6 sm:pb-[30px] 3xl:w-[250px] 3xl:shrink-0">
             <p data-count-to="520" data-suffix="" class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[40px] 3xl:text-[48px] leading-[1.3]">0</p>
             <p class="font-satoshi text-white text-base sm:text-lg 3xl:text-xl -mt-2">Total residences</p>
             <p class="font-satoshi text-white/60 text-sm 3xl:text-base">within the project</p>
           </div>
+          -->
           <div class="backdrop-blur-sm bg-black/60 rounded-[16px] flex flex-col items-center text-center gap-2.5 px-4 sm:px-6 pt-8 sm:pt-10 pb-6 sm:pb-[30px] 3xl:w-[250px] 3xl:shrink-0">
-            <p class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[40px] 3xl:text-[48px] leading-[1.3]">B+G+4</p>
-            <p class="font-satoshi text-white text-base sm:text-lg 3xl:text-xl -mt-2">Floors</p>
-            <p class="font-satoshi text-white/60 text-sm 3xl:text-base">Low-rise community living.</p>
+            <p class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[40px] 3xl:text-[48px] leading-[1.3]">Low density</p>
+            <p class="font-satoshi text-white text-base sm:text-lg 3xl:text-xl -mt-2">Living</p>
+            <p class="font-satoshi text-white/60 text-sm 3xl:text-base">Fewer homes, more space</p>
           </div>
           <div class="backdrop-blur-sm bg-black/60 rounded-[16px] flex flex-col items-center text-center gap-2.5 px-4 sm:px-6 pt-8 sm:pt-10 pb-6 sm:pb-[30px] 3xl:w-[250px] 3xl:shrink-0">
             <p data-count-to="75" data-suffix="%" class="font-optima bg-clip-text bg-gradient-to-l from-[#fdfac8] via-[#bb8b36] via-[49%] to-[#e2c978] text-transparent text-[30px] sm:text-[40px] 3xl:text-[48px] leading-[1.3]">0</p>
@@ -403,7 +434,7 @@
   <!-- <section class="relative bg-white py-16 sm:py-20 lg:py-[100px] border-t border-white/10">
     <div class="mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px]">
       <div class="reveal flex flex-col items-center gap-8 sm:gap-10 lg:gap-11">
-        <h2 data-split-reveal class="font-optima text-[##282828] text-center leading-[1.3] sm:leading-[1.35] lg:leading-[1.4] text-[28px] sm:text-[36px] lg:text-[46px] 3xl:text-[68px]">Crest Walkthrough</h2>
+        <h2 data-split-reveal class="font-optima text-[##282828] text-center leading-[1.3] sm:leading-[1.35] lg:leading-[1.4] text-[28px] sm:text-[36px] lg:text-[46px] 3xl:text-[68px]">Take a Virtual Walkthrough</h2>
         <div class="relative w-full rounded-[16px] sm:rounded-[24px] overflow-hidden">
           <img src="assets/images/crest-walkthrough-thumb.jpg" loading="lazy" class="w-full h-full max object-cover aspect-video" alt="Mahaveer Crest entrance gate walkthrough" />
           <button aria-label="Play walkthrough video" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -467,24 +498,24 @@
             <p class="font-satoshi text-charcoal text-sm sm:text-base lg:text-lg max-w-[420px]">Group amenities by life benefit instead of presenting a long, hard-to-scan checklist.</p>
           </div>
           <div class="flex flex-wrap gap-3 sm:gap-4" data-amenities-tabs>
-            <button type="button" class="amenities-tab is-active bg-crest text-white text-sm sm:text-base lg:text-lg px-5 sm:px-6 py-3 sm:py-3.5 rounded-[11px]" data-category="sports-fitness" data-heading="Move more. Feel better." data-subtext="Thoughtful spaces for slowing down, reconnecting and finding everyday balance.">Sports &amp; Fitness</button>
-            <button type="button" class="amenities-tab bg-white text-[#191919] text-sm sm:text-base lg:text-lg px-5 sm:px-6 py-3 sm:py-3.5 rounded-[11px]" data-category="leisure-wellness" data-heading="Unwind. Recharge. Repeat." data-subtext="Everyday indulgences for rest, relaxation and easy evenings.">Leisure &amp; Wellness</button>
-            <button type="button" class="amenities-tab bg-white text-[#191919] text-sm sm:text-base lg:text-lg px-5 sm:px-6 py-3 sm:py-3.5 rounded-[11px]" data-category="community-spaces" data-heading="Come together, often." data-subtext="Shared spaces designed for connection, celebration and everyday moments.">Community Spaces</button>
-            <button type="button" class="amenities-tab bg-white text-[#191919] text-sm sm:text-base lg:text-lg px-5 sm:px-6 py-3 sm:py-3.5 rounded-[11px]" data-category="indoor-recreation" data-heading="Entertainment, indoors." data-subtext="Comfort-first spaces for downtime, connectivity and quiet nights in.">Indoor Recreation</button>
+            <button type="button" class="amenities-tab is-active bg-crest text-white text-sm sm:text-base lg:text-lg px-5 sm:px-6 py-3 sm:py-3.5 rounded-[11px]" data-category="sports-fitness" data-heading="Move more. Play often." data-subtext="Courts, tracks and open-air spaces built for an active, everyday game." data-image="assets/images/crest-amenities-photo.jpg">Sports &amp; Fitness</button>
+            <button type="button" class="amenities-tab bg-white text-[#191919] text-sm sm:text-base lg:text-lg px-5 sm:px-6 py-3 sm:py-3.5 rounded-[11px]" data-category="leisure-wellness" data-heading="Unwind. Recharge. Repeat." data-subtext="Pool, spa and rooftop spaces for slowing down at the end of the day." data-image="assets/images/lifestyle-wellness.jpg">Leisure &amp; Wellness</button>
+            <button type="button" class="amenities-tab bg-white text-[#191919] text-sm sm:text-base lg:text-lg px-5 sm:px-6 py-3 sm:py-3.5 rounded-[11px]" data-category="community-spaces" data-heading="Come together, often." data-subtext="Dining and garden spaces designed for connection and everyday moments." data-image="assets/images/bento-lounge.jpg">Community Spaces</button>
+            <button type="button" class="amenities-tab bg-white text-[#191919] text-sm sm:text-base lg:text-lg px-5 sm:px-6 py-3 sm:py-3.5 rounded-[11px]" data-category="indoor-recreation" data-heading="Entertainment, indoors." data-subtext="Theatre, fitness centre and high-speed Wi-Fi for comfortable downtime in." data-image="assets/images/bento-badminton.jpg">Indoor Recreation</button>
           </div>
         </div>
-        <a href="#" class="btn font-satoshi shrink-0 inline-flex items-center justify-center bg-crest text-white text-base sm:text-lg font-medium px-6 sm:px-[26px] py-3.5 rounded-[11px]">Get Full Amenity List</a>
+        <!-- <a href="#" class="btn font-satoshi shrink-0 inline-flex items-center justify-center bg-crest text-white text-base sm:text-lg font-medium px-6 sm:px-[26px] py-3.5 rounded-[11px]">Get Full Amenity List</a> -->
       </div>
 
       <div class="reveal mt-12 sm:mt-14 lg:mt-16 flex flex-col lg:flex-row gap-8 lg:gap-12 items-start" style="--reveal-delay:120ms">
         <div class="w-full lg:w-[44%] 3xl:w-[635px] shrink-0 rounded-[16px] overflow-hidden">
-          <img src="assets/images/crest-amenities-photo.jpg" loading="lazy" class="w-full h-full object-cover aspect-[635/575]" alt="Mahaveer Crest clubhouse swimming pool" />
+          <img data-amenities-image src="assets/images/crest-amenities-photo.jpg" loading="lazy" class="w-full h-full object-cover aspect-[635/575]" alt="Mahaveer Crest clubhouse swimming pool" />
         </div>
 
         <div class="flex flex-col gap-6 sm:gap-8 lg:gap-9">
           <div class="flex flex-col gap-1.5" data-amenities-copy>
-            <h3 class="font-optima text-crest text-2xl sm:text-3xl lg:text-4xl">Move more. Feel better.</h3>
-            <p class="font-satoshi text-charcoal text-sm sm:text-base lg:text-lg">Thoughtful spaces for slowing down, reconnecting and finding everyday balance.</p>
+            <h3 class="font-optima text-crest text-2xl sm:text-3xl lg:text-4xl">Move more. Play often.</h3>
+            <p class="font-satoshi text-charcoal text-sm sm:text-base lg:text-lg">Courts, tracks and open-air spaces built for an active, everyday game.</p>
           </div>
           <div class="grid grid-cols-3 sm:grid-cols-4 gap-x-6 gap-y-8 sm:gap-x-10 sm:gap-y-10 lg:gap-x-4 lg:gap-y-4 xl:gap-x-8 xl:gap-y-8" data-amenities-grid>
             <div class="flex flex-col items-center gap-2.5 text-center" data-category="sports-fitness">
@@ -560,14 +591,35 @@
   <!-- ============================== MASTER & FLOOR PLANS ============================== -->
   <section id="floor-plans" class="relative bg-[#021625] py-16 sm:py-20 lg:py-[100px]">
     <!-- Butterfly decoration (Figma: gold butterfly flourish, top-right corner) -->
-    <div class="absolute w-[150px] h-[112px] right-0 top-[28%] ssm:top-[20%] lg:right-[38px] md:top-[20%] lg:top-[10%] 2xl:top-[185px] lg:w-[350px] lg:h-[262px] xl:w-[488px] xl:h-[363px] mix-blend-lighten items-center justify-center pointer-events-none" aria-hidden="true">
+    <!-- <div class="absolute w-[150px] h-[112px] right-0 top-[28%] ssm:top-[20%] lg:right-[38px] md:top-[20%] lg:top-[10%] 2xl:top-[185px] lg:w-[350px] lg:h-[262px] xl:w-[488px] xl:h-[363px] mix-blend-lighten items-center justify-center pointer-events-none" aria-hidden="true">
       <img src="assets/images/butterfly-decoration.png" alt="" class="w-full h-full object-cover" />
-    </div>
+    </div> -->
+    <div
+  class="absolute right-0 top-[28%]
+         w-[35vw] max-w-[488px] min-w-[150px]
+         aspect-[488/363]
+         ssm:top-[20%]
+         md:top-[20%]
+         lg:right-[38px] lg:top-[10%]
+         2xl:top-[185px]
+         mix-blend-lighten
+         pointer-events-none"
+>
+  <video
+    class="w-full h-full object-cover"
+    autoplay
+    muted
+    loop
+    playsinline
+  >
+    <source src="assets/videos/butterfly.mp4" type="video/mp4" />
+  </video>
+</div>
     <div class="relative mx-auto max-w-[1920px] px-5 sm:px-8 lg:px-12 xl:px-[100px] 3xl:pl-[248px] 3xl:pr-[247px]">
       <div class="reveal flex flex-col items-start gap-3 sm:gap-4 text-left">
         <p class="font-brittany text-[#bb8b36] leading-[1.5] text-[28px] lg:text-[30px] 3xl:text-[38px] 3xl:tracking-[0.68px] whitespace-nowrap">Master &amp; floor plans</p>
         <h2 data-split-reveal class="font-optima text-white leading-[1.3] text-[28px] sm:text-[36px] lg:text-[46px] 3xl:text-[68px]">Explore every square foot.</h2>
-        <p class="font-satoshi text-white/80 text-sm sm:text-base lg:text-lg max-w-[516px]">Floor plans are deliberately gated as a high-intent lead magnet. Replace the sample drawing with approved project plans.</p>
+        <p class="font-satoshi text-white/80 text-sm sm:text-base lg:text-lg max-w-[516px]">From the overall master layout down to each 2 &amp; 3 BHK unit, see exactly how your home fits into the wider Crest community.</p>
       </div>
 
       <div class="reveal mt-12 sm:mt-14 lg:mt-16 max-w-[1425px] mx-auto flex flex-col lg:flex-row rounded-[14px] overflow-hidden" style="--reveal-delay:120ms" data-floor-plan-tabs>
@@ -591,10 +643,10 @@
           <div class="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
             <div class="w-full max-w-[519px] bg-white rounded-[14px] flex flex-col items-center gap-6 sm:gap-8 text-center px-6 sm:px-10 py-8 sm:py-12">
               <div class="flex flex-col gap-2 items-center">
-                <p class="font-satoshi font-medium text-[#191919] text-xl sm:text-2xl 3xl:text-[30px]">Unlock the master plan</p>
+                <p data-floorplan-title class="font-satoshi font-medium text-[#191919] text-xl sm:text-2xl 3xl:text-[30px]">Unlock the master plan</p>
                 <p class="font-satoshi text-[#191919]/60 text-sm sm:text-base 3xl:text-xl max-w-[471px]">Share your details to receive approved plans, unit sizes and current availability.</p>
               </div>
-              <a href="#" class="btn font-satoshi inline-flex items-center justify-center bg-crest text-white text-base sm:text-lg 3xl:text-xl font-medium px-8 sm:px-[53px] py-3.5 sm:py-[19px] rounded-[14px]">Send Plans on WhatsApp</a>
+              <a href="https://wa.me/918072515731?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Master%20Plan%20for%20Mahaveer%20Crest.%20Please%20share%20the%20plans." target="_blank" rel="noopener" data-floorplan-whatsapp class="btn font-satoshi inline-flex items-center justify-center bg-crest text-white text-base sm:text-lg 3xl:text-xl font-medium px-8 sm:px-[53px] py-3.5 sm:py-[19px] rounded-[14px]">Send Plans on WhatsApp</a>
             </div>
           </div>
         </div>
@@ -611,7 +663,7 @@
             <p class="font-brittany text-[#bb8b36] leading-[1.5] text-[28px] lg:text-[30px] 3xl:text-[38px] 3xl:tracking-[0.68px] whitespace-nowrap">Location advantages</p>
             <h2 data-split-reveal class="font-optima text-charcoal leading-[1.3] sm:leading-[1.35] lg:leading-[1.4] text-[28px] sm:text-[36px] lg:text-[46px] 3xl:text-[68px]">Know your neighbourhood.</h2>
             <p class="font-satoshi text-charcoal text-sm sm:text-base lg:text-lg">Crest places residents in KR Puram with access to Whitefield, IT corridors, schools, healthcare, shopping and citywide connectivity.</p>
-            <a href="#" class="btn font-satoshi self-start mt-2 inline-flex items-center justify-center bg-crest text-white text-base sm:text-lg font-medium px-6 sm:px-[26px] py-3.5 rounded-[11px]">Get Location Map</a>
+            <a href="https://www.google.com/maps/place/MAHAVEER+CREST/@13.0361881,77.7184066,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae11dbf874aa7b:0xb738be3812113f56!8m2!3d13.0361829!4d77.7209815!16s%2Fg%2F11z2ljj1zl" target="_blank" rel="noopener" class="btn font-satoshi self-start mt-2 inline-flex items-center justify-center bg-crest text-white text-base sm:text-lg font-medium px-6 sm:px-[26px] py-3.5 rounded-[11px]">Get Location Map</a>
           </div>
 
           <div class="flex flex-col gap-4 sm:gap-5">
@@ -671,7 +723,7 @@
         </div> -->
         <div class="w-full lg:flex-1 rounded-[16px] overflow-hidden aspect-[1046/691]">
   <iframe
-    src="https://www.google.com/maps?q=12.966572,77.599559&z=16&output=embed"
+    src="https://www.google.com/maps?q=13.0361829,77.7209815(Mahaveer+Crest)&z=17&output=embed"
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
     class="w-full h-full border-0"
@@ -693,7 +745,7 @@
         <div class="flex flex-col gap-3 sm:gap-4">
           <p class="font-brittany text-[#bb8b36] leading-[1.5] text-[28px] lg:text-[30px] 3xl:text-[38px] 3xl:tracking-[0.68px] whitespace-nowrap">Project gallery</p>
           <h2 data-split-reveal class="font-optima text-white leading-[1.3] sm:leading-[1.35] lg:leading-[1.4] text-[28px] sm:text-[36px] lg:text-[46px] 3xl:text-[68px]">The art of living, captured.</h2>
-          <p class="font-satoshi text-white/70 text-sm sm:text-base lg:text-lg max-w-[489px]">Use approved renders and actual project imagery. All current images are visual placeholders.</p>
+          <p class="font-satoshi text-white/70 text-sm sm:text-base lg:text-lg max-w-[489px]">A closer look at Crest's exteriors, interiors and amenities — a preview of everyday life within the community.</p>
         </div>
         <div class="flex flex-wrap gap-3 sm:gap-4" data-gallery-tabs>
           <button type="button" data-tab="exterior" class="gallery-tab is-active shrink-0 bg-gradient-to-l from-[#e2c978] via-[#bb8b36] via-[49%] to-[#e2c978] text-white text-sm sm:text-base lg:text-lg px-5 sm:px-6 py-3 sm:py-3.5 rounded-[11px]">Exterior</button>
@@ -817,7 +869,7 @@
         <div class="relative w-full lg:w-[400px] xl:w-[500px] xll:w-[600px] 2xl:w-[705px] shrink-0 rounded-[16px] overflow-hidden">
           <img src="assets/images/crest-config-2bhk.jpg" loading="lazy" class="w-full h-full object-cover aspect-[705/675]" alt="Mahaveer Crest residence exterior" />
           <div class="absolute inset-0" style="background-image: linear-gradient(214.48180436909905deg, rgba(0, 0, 0, 0) 55.202%, rgba(0, 0, 0, 0.68) 82.824%)"></div>
-          <img src="assets/images/crest-about-legacy-badge.png" class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 w-24 sm:w-32 lg:w-36 3xl:bottom-[47px] 3xl:left-[48px] 3xl:w-[113px] h-auto" alt="27 years of legacy" />
+          <img src="assets/images/crest-about-legacy-badge.png" class="absolute top-4 right-4 sm:top-6 sm:right-6 w-24 sm:w-32 lg:w-36 3xl:top-[47px] 3xl:right-[48px] 3xl:w-[113px] h-auto" alt="27 years of legacy" />
         </div>
 
         <div class="flex flex-col gap-7 sm:gap-8 lg:gap-[30px] lg:max-w-[669px]">
@@ -846,7 +898,7 @@
             </div>
           </div>
 
-          <a href="#" class="btn font-satoshi self-start inline-flex items-center justify-center bg-crest text-white text-base sm:text-lg 3xl:text-[20px] font-medium 3xl:font-normal px-6 sm:px-[26px] py-3.5 rounded-[11px]">Schedule a Guided Visit</a>
+          <!-- <button type="button" data-open-enquiry-modal class="btn font-satoshi self-start inline-flex items-center justify-center bg-crest text-white text-base sm:text-lg 3xl:text-[20px] font-medium 3xl:font-normal px-6 sm:px-[26px] py-3.5 rounded-[11px]">Schedule a Guided Visit</button> -->
         </div>
       </div>
     </div>
@@ -862,7 +914,7 @@
             <h3 class="font-optima text-[#191919] text-2xl sm:text-[28px] 3xl:text-[34px]">Speak to a project advisor.</h3>
             <p class="font-satoshi text-charcoal text-sm sm:text-base 3xl:text-lg">Get current inventory, pricing, payment-plan and site-visit information directly from the sales team.</p>
           </div>
-          <a href="tel:18002081999" class="btn font-satoshi self-start inline-flex items-center justify-center bg-crest text-white text-base sm:text-lg font-medium px-6 sm:px-[26px] py-3.5 rounded-[11px]">Contact Us</a>
+          <button type="button" data-open-enquiry-modal class="btn font-satoshi self-start inline-flex items-center justify-center bg-crest text-white text-base sm:text-lg font-medium px-6 sm:px-[26px] py-3.5 rounded-[11px]">Contact Us</button>
         </div>
 
         <div class="flex-1 w-full flex flex-col gap-9 sm:gap-10">
@@ -875,7 +927,7 @@
                 <img src="assets/icons/icon-plus.svg" class="faq-icon w-5 h-5 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300" alt="" />
               </button>
               <div class="faq-answer overflow-hidden transition-all duration-300" style="max-height:0">
-                <p class="font-satoshi text-charcoal/80 text-sm sm:text-base pt-3 sm:pt-4 max-w-[485px]">Mahaveer Crest is located in KR Puram, Bengaluru. Add the approved site address and map pin before publishing.</p>
+                <p class="font-satoshi text-charcoal/80 text-sm sm:text-base pt-3 sm:pt-4 max-w-[485px]">Mahaveer Crest is located in KR Puram, Bengaluru, with easy access to Whitefield and the ITPL tech corridor. See the Location section above for the exact map pin and nearby landmarks.</p>
               </div>
             </div>
             <div class="border-t border-charcoal/10 py-5 sm:py-6" data-faq>
@@ -884,7 +936,7 @@
                 <img src="assets/icons/icon-plus.svg" class="faq-icon w-5 h-5 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300" alt="" />
               </button>
               <div class="faq-answer overflow-hidden transition-all duration-300" style="max-height:0">
-                <p class="font-satoshi text-charcoal/80 text-sm sm:text-base pt-3 sm:pt-4 max-w-[485px]">Crest offers 2 &amp; 3 BHK residences. Add exact carpet-area ranges for each configuration before publishing.</p>
+                <p class="font-satoshi text-charcoal/80 text-sm sm:text-base pt-3 sm:pt-4 max-w-[485px]">Crest offers 2 &amp; 3 BHK residences designed for comfortable family living. Submit an enquiry to receive exact carpet-area sizes for each configuration.</p>
               </div>
             </div>
             <div class="border-t border-charcoal/10 py-5 sm:py-6" data-faq>
@@ -893,7 +945,7 @@
                 <img src="assets/icons/icon-plus.svg" class="faq-icon w-5 h-5 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300" alt="" />
               </button>
               <div class="faq-answer overflow-hidden transition-all duration-300" style="max-height:0">
-                <p class="font-satoshi text-charcoal/80 text-sm sm:text-base pt-3 sm:pt-4 max-w-[485px]">Add current starting price and any active launch offers before publishing.</p>
+                <p class="font-satoshi text-charcoal/80 text-sm sm:text-base pt-3 sm:pt-4 max-w-[485px]">Mahaveer Crest homes start at ₹1.04 Cr* onwards. Submit an enquiry for the latest pricing and any active launch offers. *Terms and conditions apply; price subject to change.</p>
               </div>
             </div>
             <div class="border-t border-charcoal/10 py-5 sm:py-6" data-faq>
@@ -902,7 +954,7 @@
                 <img src="assets/icons/icon-plus.svg" class="faq-icon w-5 h-5 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300" alt="" />
               </button>
               <div class="faq-answer overflow-hidden transition-all duration-300" style="max-height:0">
-                <p class="font-satoshi text-charcoal/80 text-sm sm:text-base pt-3 sm:pt-4 max-w-[485px]">Yes — use the "Download Brochure" and "Get 2/3 BHK Details" buttons above to request the brochure and floor plans.</p>
+                <p class="font-satoshi text-charcoal/80 text-sm sm:text-base pt-3 sm:pt-4 max-w-[485px]">Yes — use the "Download Brochure" button above for the brochure, or submit an enquiry form to receive detailed floor plans on WhatsApp.</p>
               </div>
             </div>
             <div class="border-t border-charcoal/10 py-5 sm:py-6" data-faq>
@@ -911,7 +963,7 @@
                 <img src="assets/icons/icon-plus.svg" class="faq-icon w-5 h-5 sm:w-6 sm:h-6 shrink-0 transition-transform duration-300" alt="" />
               </button>
               <div class="faq-answer overflow-hidden transition-all duration-300" style="max-height:0">
-                <p class="font-satoshi text-charcoal/80 text-sm sm:text-base pt-3 sm:pt-4 max-w-[485px]">Call 1800 2081 999 or submit any enquiry form on this page and a project advisor will arrange a site visit.</p>
+                <p class="font-satoshi text-charcoal/80 text-sm sm:text-base pt-3 sm:pt-4 max-w-[485px]">Submit any enquiry form on this page and a project advisor will get in touch to arrange a site visit.</p>
               </div>
             </div>
             <div class="border-t border-b border-charcoal/10 py-5 sm:py-6" data-faq>
@@ -983,12 +1035,12 @@
         <img src="assets/images/crest-mahaveer-logo.png" alt="Mahaveer" class="h-[77px] lg:h-[57px] 2xl:h-[77px] w-auto select-none " />
         <img src="assets/images/crest-black-logo.png" alt="Crest" class="w-auto h-[76px] lg:h-[56px] 2xl:h-[76px] select-none" />
 </a>
-          <p class="font-satoshi text-[#191919] font-medium text-lg sm:text-xl 2xl:text-2xl leading-[1.6]">Premium 1, 2 &amp; 3 BHK residences set within a nature-led community in KR Puram.</p>
+          <p class="font-satoshi text-[#191919] font-medium text-lg sm:text-xl 2xl:text-2xl leading-[1.6]">Premium 2 &amp; 3 BHK residences set within a nature-led community in KR Puram.</p>
           <div class="flex items-center gap-5 sm:gap-7">
-            <a href="#" aria-label="Instagram" class="icon-btn text-charcoal-dark hover:text-crest"><img src="assets/icons/icon-instagram.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="" /></a>
-            <a href="#" aria-label="Facebook" class="icon-btn text-charcoal-dark hover:text-crest"><img src="assets/icons/icon-facebook.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="" /></a>
-            <a href="#" aria-label="LinkedIn" class="icon-btn text-charcoal-dark hover:text-crest"><img src="assets/icons/icon-linkedin.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="" /></a>
-            <a href="#" aria-label="Pinterest" class="icon-btn text-charcoal-dark hover:text-crest"><img src="assets/icons/icon-pinterest.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="" /></a>
+            <a href="https://www.instagram.com/mahaveergroup_rspl?igsh=ZGFhbzVlYzIxcmhz" target="_blank" rel="noopener" aria-label="Instagram" class="icon-btn text-charcoal-dark hover:text-crest"><img src="assets/icons/icon-instagram.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="" /></a>
+            <a href="https://www.facebook.com/MahaveerDevelopers?mibextid=ZbWKwL" target="_blank" rel="noopener" aria-label="Facebook" class="icon-btn text-charcoal-dark hover:text-crest"><img src="assets/icons/icon-facebook.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="" /></a>
+            <a href="https://www.linkedin.com/in/mahaveer-group-b0b474382" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon-btn text-charcoal-dark hover:text-crest"><img src="assets/icons/icon-linkedin.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="" /></a>
+            <a href="https://www.youtube.com/@mahaveerdevelopersrspl8123" target="_blank" rel="noopener" aria-label="YouTube" class="icon-btn text-charcoal-dark hover:text-crest"><img src="assets/icons/icon-youtube.svg" class="w-5 h-5 sm:w-6 sm:h-6" alt="" /></a>
           </div>
         </div>
 
@@ -999,11 +1051,11 @@
           </div>
           <div class="flex flex-col gap-3 sm:gap-4">
             <h3 class="font-satoshi font-medium text-[#191919] text-lg sm:text-xl lg:text-2xl">Project address</h3>
-            <p class="font-satoshi text-charcoal-dark/80 text-sm sm:text-base leading-[1.8]">Sy No 25/1, 100 Feet Road, 2nd Block SVM BDA Layout, Kommaghatta, Bengaluru, Karnataka 560060</p>
+            <p class="font-satoshi text-charcoal-dark/80 text-sm sm:text-base leading-[1.8]">Mahaveer Crest, Sy No 99/1, 99/2, 100/1 and 100/2 of Hirandahalli Village, Bidarahalli Hobli, Bengaluru East, Bengaluru Urban, Karnataka – 560049</p>
           </div>
           <div class="flex flex-col gap-3 sm:gap-4">
             <h3 class="font-satoshi font-medium text-[#191919] text-lg sm:text-xl lg:text-2xl">Contact</h3>
-            <p class="font-satoshi text-charcoal-dark/80 text-sm sm:text-base leading-[1.8]"><a href="tel:18002081999" class="hover:text-crest transition-colors">1800 2081 999</a><br /><a href="mailto:marketing@mahaveergroup.in" class="hover:text-crest transition-colors">marketing@mahaveergroup.in</a><br />mahaveergroup.in</p>
+            <p class="font-satoshi text-charcoal-dark/80 text-sm sm:text-base leading-[1.8]"><a href="mailto:marketing@mahaveergroup.in" class="hover:text-crest transition-colors">marketing@mahaveergroup.in</a><br /><a href="https://mahaveergroup.in" target="_blank" rel="noopener" class="hover:text-crest transition-colors">mahaveergroup.in</a></p>
           </div>
           <div class="flex flex-col gap-3 sm:gap-4">
             <h3 class="font-satoshi font-medium text-[#191919] text-lg sm:text-xl lg:text-2xl">Project information</h3>
@@ -1019,8 +1071,8 @@
 
       <div class="mt-12 sm:mt-14 lg:mt-[72px] pt-6 sm:pt-8 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
         <div class="font-satoshi flex flex-wrap items-center gap-3 sm:gap-8 lg:gap-12 text-charcoal-dark/80 text-xs sm:text-sm">
-          <a href="#" class="hover:text-crest transition-colors">Privacy Policy</a>
-          <a href="#" class="hover:text-crest transition-colors">Terms &amp; Conditions</a>
+          <span>Privacy Policy</span>
+          <span>Terms &amp; Conditions</span>
           <span>Copyright &copy; 2026 Mahaveer Group All Rights Reserved</span>
         </div>
         <button id="back-to-top" aria-label="Back to top" class="icon-btn w-12 h-12 sm:w-[60px] sm:h-[60px] rounded-[11px] bg-crest flex items-center justify-center shrink-0">
@@ -1029,6 +1081,84 @@
       </div>
     </div>
   </footer>
+
+  <!-- ============================== ENQUIRY MODAL ============================== -->
+  <div id="enquiry-modal-backdrop" class="fixed inset-0 z-[90] bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  <div id="enquiry-modal" role="dialog" aria-modal="true" aria-labelledby="enquiry-modal-title" class="fixed inset-0 z-[95] flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="relative w-full max-w-[560px] max-h-[90vh] overflow-y-auto bg-white rounded-[24px] p-6 sm:p-9">
+      <button type="button" id="enquiry-modal-close" aria-label="Close" class="icon-btn absolute top-4 right-4 sm:top-5 sm:right-5 w-10 h-10 rounded-full bg-[#f2f2f2] flex items-center justify-center">
+        <img src="assets/icons/icon-close.svg" class="w-4 h-4" alt="" />
+      </button>
+
+      <div id="enquiry-modal-form-wrap" class="flex flex-col gap-6 sm:gap-7">
+        <div class="flex flex-col gap-1.5 pr-10">
+          <h2 id="enquiry-modal-title" class="font-optima text-[#3b3b3b] text-2xl sm:text-[28px] leading-[1.3]">Get complete project details</h2>
+          <p class="font-satoshi text-[#3b3b3b] text-sm sm:text-base">Price sheet, floor plans, availability and offers.</p>
+        </div>
+
+        <form id="enquiry-form" novalidate class="flex flex-col gap-5 sm:gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+            <label class="flex flex-col gap-2">
+              <span class="font-satoshi text-[#3b3b3b] text-sm">Full name</span>
+              <input type="text" name="name" placeholder="Enter Your Name" class="font-satoshi bg-[#f2f2f2] placeholder:text-[#3b3b3b]/40 text-[#3b3b3b] text-sm sm:text-base rounded-[8px] px-4 sm:px-5 py-4 outline-none focus:ring-2 focus:ring-crest/40" />
+              <span class="field-error hidden text-xs text-red-600"></span>
+            </label>
+            <label class="flex flex-col gap-2">
+              <span class="font-satoshi text-[#3b3b3b] text-sm">Mobile Number</span>
+              <input type="tel" name="mobile" placeholder="Mobile Number" class="font-satoshi bg-[#f2f2f2] placeholder:text-[#3b3b3b]/40 text-[#3b3b3b] text-sm sm:text-base rounded-[8px] px-4 sm:px-5 py-4 outline-none focus:ring-2 focus:ring-crest/40" />
+              <span class="field-error hidden text-xs text-red-600"></span>
+            </label>
+          </div>
+          <label class="flex flex-col gap-2">
+            <span class="font-satoshi text-[#3b3b3b] text-sm">Email ID</span>
+            <input type="email" name="email" placeholder="Email ID" class="font-satoshi bg-[#f2f2f2] placeholder:text-[#3b3b3b]/40 text-[#3b3b3b] text-sm sm:text-base rounded-[8px] px-4 sm:px-5 py-4 outline-none focus:ring-2 focus:ring-crest/40" />
+            <span class="field-error hidden text-xs text-red-600"></span>
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+            <label class="flex flex-col gap-2">
+              <span class="font-satoshi text-[#3b3b3b] text-sm">Interested In</span>
+              <div class="relative">
+                <select name="interestedIn" class="w-full appearance-none font-satoshi bg-[#f2f2f2] text-[#3b3b3b] text-sm sm:text-base rounded-[8px] pl-4 sm:pl-5 pr-11 py-4 outline-none focus:ring-2 focus:ring-crest/40">
+                  <option value="">Interested In</option>
+                  <option>2 BHK</option>
+                  <option>3 BHK</option>
+                </select>
+                <img src="assets/icons/icon-arrow-down-dark.svg" class="w-5 h-5 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" alt="" />
+              </div>
+              <span class="field-error hidden text-xs text-red-600"></span>
+            </label>
+            <label class="flex flex-col gap-2">
+              <span class="font-satoshi text-[#3b3b3b] text-sm">Next Step</span>
+              <div class="relative">
+                <select name="nextStep" class="w-full appearance-none font-satoshi bg-[#f2f2f2] text-[#3b3b3b] text-sm sm:text-base rounded-[8px] pl-4 sm:pl-5 pr-11 py-4 outline-none focus:ring-2 focus:ring-crest/40">
+                  <option value="">Next Step</option>
+                  <option>Get Callback</option>
+                  <option>Book Site Visit</option>
+                </select>
+                <img src="assets/icons/icon-arrow-down-dark.svg" class="w-5 h-5 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" alt="" />
+              </div>
+              <span class="field-error hidden text-xs text-red-600"></span>
+            </label>
+          </div>
+          <div class="flex flex-col gap-3">
+            <label class="flex flex-col gap-1.5">
+              <span class="flex items-start gap-2.5">
+                <input type="checkbox" name="consent" class="mt-0.5 w-4 h-4 shrink-0 accent-crest" />
+                <span class="font-satoshi text-[#3b3b3b] text-[11px] sm:text-xs leading-relaxed">I agree to be contacted by Mahaveer Group and its authorised representatives regarding this enquiry.</span>
+              </span>
+              <span class="field-error hidden text-xs text-red-600"></span>
+            </label>
+            <button type="submit" class="btn font-satoshi w-full bg-crest text-white text-base sm:text-lg font-medium px-6 py-4 rounded-[11px]">Send Me the Details</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="enquiry-modal-success" class="hidden flex-col items-center text-center gap-3 py-10">
+        <h2 class="font-optima text-[#3b3b3b] text-2xl">Thank you!</h2>
+        <p class="font-satoshi text-[#3b3b3b] text-sm sm:text-base">Our team will get in touch with you shortly.</p>
+      </div>
+    </div>
+  </div>
 
   <div class="cursor-outer" aria-hidden="true"></div>
   <div class="cursor-inner" aria-hidden="true"></div>
