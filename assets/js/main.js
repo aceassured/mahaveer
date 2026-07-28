@@ -172,7 +172,6 @@
    * lead-gen overlay), so the image itself is flipped/rotated per tab
    * to still read as a change even though it's the same file.
    * ------------------------------------------------------------------- */
-  var floorplanTransforms = { master: "none", "2bhk": "scaleX(-1)", "3bhk": "rotate(180deg)" };
   var floorplanTitles = {
     master: "Unlock the master plan",
     "2bhk": "Unlock the 2 BHK plan",
@@ -195,7 +194,10 @@
         tab.classList.remove("bg-white", "text-[#191919]");
         tab.classList.add("bg-[#191919]", "text-white", "is-active");
         tab.querySelector(".tab-num").classList.remove("opacity-40");
-        if (img) img.style.transform = floorplanTransforms[tab.dataset.tab] || "none";
+        if (img && tab.dataset.image) {
+          img.src = tab.dataset.image;
+          img.alt = "Mahaveer Crest " + (floorplanPlanNames[tab.dataset.tab] || "floor plan");
+        }
         if (titleEl) titleEl.textContent = floorplanTitles[tab.dataset.tab] || titleEl.textContent;
         if (whatsappLink) {
           var planName = floorplanPlanNames[tab.dataset.tab] || "floor plan";
